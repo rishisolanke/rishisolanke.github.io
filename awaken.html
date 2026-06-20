@@ -27,10 +27,10 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(-
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--terra);border-radius:4px}
 
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.stagger{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
-.stagger.visible{opacity:1;transform:translateY(0)}
+.reveal{opacity:0;transform:translateY(32px) translateZ(0);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
+.reveal.visible{opacity:1;transform:translateY(0) translateZ(0)}
+.stagger{opacity:0;transform:translateY(24px) translateZ(0);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
+.stagger.visible{opacity:1;transform:translateY(0) translateZ(0)}
 
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes spin-r{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
@@ -60,8 +60,8 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(-
 .p10{width:3px;height:3px;background:rgba(196,168,120,.35);left:80%;bottom:-10px;animation-duration:21s;animation-delay:-2s}
 
 .mandala-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0}
-.mandala-outer{width:min(750px,140vw);height:min(750px,140vw);animation:spin 120s linear infinite;opacity:.18}
-.mandala-inner{width:min(450px,85vw);height:min(450px,85vw);animation:spin-r 90s linear infinite;opacity:.14;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.mandala-outer{width:min(750px,140vw);height:min(750px,140vw);animation:spin 120s linear infinite;opacity:.18;will-change:transform;transform:translateZ(0)}
+.mandala-inner{width:min(450px,85vw);height:min(450px,85vw);animation:spin-r 90s linear infinite;opacity:.14;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) translateZ(0);will-change:transform}
 .mandala-outer svg,.mandala-inner svg{width:100%;height:100%}
 
 section{position:relative;padding:80px 24px;z-index:1}
@@ -86,7 +86,7 @@ section{position:relative;padding:80px 24px;z-index:1}
 .phone-text{text-align:center;max-width:400px}
 .phone-text h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--brown);margin-bottom:12px}
 .phone-text p{font-size:15px;color:var(--brown-mid);line-height:1.7}
-.phone-device{width:270px;height:540px;background:#1A1210;border-radius:36px;border:3px solid #3D2B1F;position:relative;box-shadow:0 25px 80px rgba(61,43,31,.2),0 8px 24px rgba(61,43,31,.12);animation:float 6s ease-in-out infinite;overflow:hidden}
+.phone-device{width:270px;height:540px;background:#1A1210;border-radius:36px;border:3px solid #3D2B1F;position:relative;box-shadow:0 25px 80px rgba(61,43,31,.2),0 8px 24px rgba(61,43,31,.12);animation:float 6s ease-in-out infinite;overflow:hidden;will-change:transform;transform:translateZ(0)}
 .phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:90px;height:24px;background:#1A1210;border-radius:0 0 14px 14px;z-index:5}
 .phone-screen{padding:12px 16px;height:100%;display:flex;flex-direction:column;position:relative}
 .ps-status{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:rgba(232,196,176,.5);padding:4px 0 12px;margin-top:16px}
@@ -115,14 +115,14 @@ section{position:relative;padding:80px 24px;z-index:1}
 /* FEATURES */
 .features-section{padding:80px 24px;background:var(--bg)}
 .features-grid{display:grid;grid-template-columns:1fr;gap:12px}
-.feature-card{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:16px;padding:20px;transition:transform .3s ease,box-shadow .3s ease}
+.feature-card{background:rgba(255,255,255,0.7);border:1px solid var(--glass-border);border-radius:16px;padding:20px;transition:transform .3s ease,box-shadow .3s ease;transform:translateZ(0)}
 .feature-card:active{transform:scale(.97)}
 .fi{width:32px;height:32px;margin-bottom:12px;display:block;color:var(--terra)}
 .fi svg{width:100%;height:100%;animation:breathe 4s ease-in-out infinite;animation-play-state:paused}
 .feature-card:hover .fi svg,.stagger.visible .fi svg{animation-play-state:running}
 .feature-title{font-size:14px;font-weight:600;color:var(--brown);margin-bottom:4px}
 .feature-desc{font-size:12px;color:var(--brown-mid);line-height:1.5}
-@supports not (backdrop-filter:blur(1px)){.feature-card{background:rgba(255,255,255,.85)}}
+section{contain:layout style paint}
 
 /* TIMELINE */
 .timeline-section{background:var(--bg-warm);padding:80px 24px}
@@ -184,10 +184,9 @@ section{position:relative;padding:80px 24px;z-index:1}
 </head>
 <body>
 
-<div class="particle p1"></div><div class="particle p2"></div><div class="particle p3"></div>
-<div class="particle p4"></div><div class="particle p5"></div><div class="particle p6"></div>
-<div class="particle p7"></div><div class="particle p8"></div><div class="particle p9"></div>
-<div class="particle p10"></div>
+<div class="particle p1"></div><div class="particle p3"></div>
+<div class="particle p4"></div><div class="particle p6"></div>
+<div class="particle p8"></div><div class="particle p10"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -257,7 +256,7 @@ section{position:relative;padding:80px 24px;z-index:1}
   <div class="container">
     <p class="section-label reveal">What's Inside</p>
     <h2 class="section-title reveal">What Your Students Get</h2>
-    <p class="section-sub reveal">18 features, one place to practice</p>
+    <p class="section-sub reveal">19 features, one place to practice</p>
 
     <div class="features-grid" id="featureGrid">
 
@@ -283,9 +282,11 @@ section{position:relative;padding:80px 24px;z-index:1}
 
       <div class="feature-card stagger"><span class="fi"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="16" cy="14" r="6"/><path d="M16 8v-4"/><path d="M10 14H4"/><path d="M28 14h-6"/><path d="M16 20v6"/><line x1="11" y1="9" x2="8" y2="6"/><line x1="21" y1="9" x2="24" y2="6"/></svg></span><div class="feature-title">Daily Intention</div><div class="feature-desc">A morning thought to carry into the day</div></div>
 
-      <div class="feature-card stagger"><span class="fi"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="16" cy="16" r="10"/><path d="M16 6l2 7h7l-5.5 4 2 7L16 20l-5.5 4 2-7L7 13h7z" fill="currentColor" opacity=".15" stroke="none"/><circle cx="16" cy="16" r="3"/></svg></span><div class="feature-title">Practice Companion</div><div class="feature-desc">A personal guide for questions about meditation and mindfulness</div></div>
+      <div class="feature-card stagger"><span class="fi"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="16" cy="16" r="10"/><path d="M16 6l2 7h7l-5.5 4 2 7L16 20l-5.5 4 2-7L7 13h7z" fill="currentColor" opacity=".15" stroke="none"/><circle cx="16" cy="16" r="3"/></svg></span><div class="feature-title">AI Practice Companion</div><div class="feature-desc">An AI chatbot trained on your teachings to answer student questions anytime</div></div>
 
       <div class="feature-card stagger"><span class="fi"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M16 6l3 6 7 1-5 5 1.2 7-6.2-3.3L9.8 25 11 18 6 13l7-1z"/></svg></span><div class="feature-title">Personalization</div><div class="feature-desc">Helps new students find the right starting point</div></div>
+
+      <div class="feature-card stagger"><span class="fi"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="5" width="22" height="22" rx="3"/><path d="M12 11h8"/><path d="M12 16h5"/><circle cx="21" cy="21" r="5" fill="currentColor" opacity=".12" stroke="currentColor"/><path d="M19.5 19.5l3 3"/></svg></span><div class="feature-title">AI Content Organizer</div><div class="feature-desc">Automatically categorizes and helps students find the right meditation, talk, or course</div></div>
 
       <div class="feature-card stagger"><span class="fi"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="6" width="22" height="20" rx="3"/><line x1="5" y1="12" x2="27" y2="12"/><circle cx="11" cy="19" r="2" fill="currentColor" opacity=".3" stroke="none"/><circle cx="16" cy="19" r="2" fill="currentColor" opacity=".3" stroke="none"/><circle cx="21" cy="19" r="2" fill="currentColor" opacity=".3" stroke="none"/></svg></span><div class="feature-title">Live Sessions</div><div class="feature-desc">Schedule and reminders for your live group sits</div></div>
 
@@ -328,7 +329,7 @@ section{position:relative;padding:80px 24px;z-index:1}
     <p class="section-label reveal">Your Investment</p>
     <div class="reveal">
       <div class="price" id="priceEl">$7,000</div>
-      <div class="price-details">18 features · iOS + Android · 3 to 4 weeks</div>
+      <div class="price-details">19 features · iOS + Android · 3 to 4 weeks</div>
     </div>
     <div class="payment-pills reveal">
       <div class="pill">40% on signing</div>
@@ -345,8 +346,8 @@ section{position:relative;padding:80px 24px;z-index:1}
     <h2 class="section-title reveal">You're Covered</h2>
     <ul class="check-list">
       <li class="check-item reveal"><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2.5 6l2.5 2.5 4.5-5"/></svg></div><span>30 days of free bug fixes</span></li>
-      <li class="check-item reveal"><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2.5 6l2.5 2.5 4.5-5"/></svg></div><span>Priority response within 24 hours</span></li>
       <li class="check-item reveal"><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2.5 6l2.5 2.5 4.5-5"/></svg></div><span>Your app, your data, you own everything</span></li>
+      <li class="check-item reveal"><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2.5 6l2.5 2.5 4.5-5"/></svg></div><span>Ongoing services (hosting, app store accounts, AI) billed at cost</span></li>
     </ul>
   </div>
 </section>
@@ -356,7 +357,7 @@ section{position:relative;padding:80px 24px;z-index:1}
   <div class="container">
     <p class="footer-cta reveal">Let's build something beautiful</p>
     <p class="footer-from reveal">From</p>
-    <p class="footer-name reveal">Rishi Solanke</p>
+    <p class="footer-name reveal">Rushi Solanke</p>
     <p class="footer-date reveal">June 2026</p>
     <div class="footer-mandala">
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
