@@ -135,13 +135,10 @@ section{contain:layout style paint}
 .tl-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--brown);margin-bottom:4px}
 .tl-desc{font-size:13px;color:var(--brown-mid);line-height:1.6}
 
-/* INVESTMENT */
-.invest-section{background:var(--bg);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
-.invest-mandala{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(500px,100vw);height:min(500px,100vw);opacity:.1;animation:spin 100s linear infinite;pointer-events:none}
-.price{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:var(--brown);position:relative;z-index:1;line-height:1}
-.price-details{font-size:14px;color:var(--terra);margin-top:8px;position:relative;z-index:1}
-.payment-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px;position:relative;z-index:1}
-.pill{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:100px;padding:10px 20px;font-size:13px;font-weight:500;color:var(--brown)}
+/* CTA */
+.cta-section{background:var(--bg);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--brown);line-height:1.2;position:relative;z-index:1}
+.cta-sub{font-size:15px;color:var(--brown-mid);margin-top:12px;position:relative;z-index:1}
 
 /* AFTER LAUNCH */
 .after-section{background:var(--bg-warm);padding:80px 24px}
@@ -168,7 +165,7 @@ section{contain:layout style paint}
   .phone-text{text-align:left}
   .hero-title{font-size:80px}
   .section-title{font-size:42px}
-  .price{font-size:80px}
+  .cta-title{font-size:42px}
 }
 @media(min-width:1024px){
   .features-grid{grid-template-columns:repeat(3,1fr)}
@@ -317,25 +314,12 @@ section{contain:layout style paint}
   </div>
 </section>
 
-<!-- INVESTMENT -->
-<section class="invest-section">
-  <div class="invest-mandala">
-    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <g stroke="rgba(196,112,75,.4)" stroke-width="1"><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(0 250 250)"/><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(30 250 250)"/><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(60 250 250)"/><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(90 250 250)"/><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(120 250 250)"/><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(150 250 250)"/><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(180 250 250)"/><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(210 250 250)"/><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(240 250 250)"/><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(270 250 250)"/><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(300 250 250)"/><ellipse cx="250" cy="100" rx="16" ry="60" transform="rotate(330 250 250)"/></g>
-      <circle cx="250" cy="250" r="200" stroke="rgba(168,130,90,.18)" stroke-width=".8"/><circle cx="250" cy="250" r="150" stroke="rgba(196,112,75,.15)" stroke-width=".8"/><circle cx="250" cy="250" r="100" stroke="rgba(168,130,90,.2)" stroke-width=".8"/><circle cx="250" cy="250" r="50" stroke="rgba(196,112,75,.22)" stroke-width="1"/>
-    </svg>
-  </div>
+<!-- CTA -->
+<section class="cta-section">
   <div class="container">
-    <p class="section-label reveal">Your Investment</p>
-    <div class="reveal">
-      <div class="price" id="priceEl">$7,000</div>
-      <div class="price-details">19 features · iOS + Android · 3 to 4 weeks</div>
-    </div>
-    <div class="payment-pills reveal">
-      <div class="pill">40% on signing</div>
-      <div class="pill">30% at beta</div>
-      <div class="pill">30% at launch</div>
-    </div>
+    <p class="section-label reveal">Next Step</p>
+    <h2 class="cta-title reveal">Let's talk about what this looks like for you</h2>
+    <p class="cta-sub reveal">19 features, iOS + Android, 3 to 4 weeks</p>
   </div>
 </section>
 
@@ -386,23 +370,6 @@ const featureObs = new IntersectionObserver((entries) => {
 const grid = document.getElementById('featureGrid');
 if (grid) featureObs.observe(grid);
 
-const priceEl = document.getElementById('priceEl');
-let priceDone = false;
-const priceObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting && !priceDone) { priceDone = true; animateCount(priceEl, 7000, 1600); priceObs.unobserve(e.target); } });
-}, { threshold: 0.3 });
-if (priceEl) priceObs.observe(priceEl);
-
-function animateCount(el, target, duration) {
-  const start = performance.now();
-  const ease = t => 1 - Math.pow(1 - t, 4);
-  function tick(now) {
-    const p = Math.min((now - start) / duration, 1);
-    el.textContent = '$' + Math.round(target * ease(p)).toLocaleString();
-    if (p < 1) requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-}
 </script>
 </body>
 </html>
