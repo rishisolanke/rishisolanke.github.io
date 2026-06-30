@@ -105,10 +105,20 @@ section{position:relative;padding:80px 24px;z-index:1;contain:layout style paint
 
 /* INVESTMENT */
 .invest-section{background:var(--bg);padding:80px 24px;text-align:center}
-.invest-price{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;color:var(--navy);margin-bottom:4px}
-.invest-period{font-size:18px;color:var(--navy-mid);margin-bottom:8px}
-.invest-details{font-size:15px;color:var(--navy-mid);margin-bottom:20px}
-.invest-note{font-size:13px;font-style:italic;color:var(--navy-light);max-width:400px;margin:0 auto;line-height:1.6}
+.invest-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:680px;margin:32px auto 0}
+@media(max-width:600px){.invest-grid{grid-template-columns:1fr;max-width:340px}}
+.plan-card{background:#fff;border-radius:20px;padding:40px 28px 36px;border:1.5px solid var(--glass-border);position:relative;transition:transform .3s ease,box-shadow .3s ease}
+.plan-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(26,42,69,.08)}
+.plan-card.recommended{border-color:var(--blue)}
+.plan-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:600;padding:4px 16px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase}
+.plan-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.plan-price{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:var(--navy);margin-bottom:2px}
+.plan-period{font-size:15px;color:var(--navy-mid);margin-bottom:20px}
+.plan-list{list-style:none;text-align:left;margin:0;padding:0}
+.plan-list li{font-size:13px;color:var(--navy-mid);padding:6px 0;border-bottom:1px solid var(--blue-pale);display:flex;align-items:baseline;gap:8px;line-height:1.5}
+.plan-list li:last-child{border-bottom:none}
+.plan-list li::before{content:'✓';color:var(--blue-deep);font-weight:700;flex-shrink:0}
+.invest-note{font-size:13px;font-style:italic;color:var(--navy-light);max-width:500px;margin:28px auto 0;line-height:1.6}
 
 /* CTA */
 .cta-section{background:var(--bg-warm);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
@@ -244,10 +254,37 @@ section{position:relative;padding:80px 24px;z-index:1;contain:layout style paint
 <section class="invest-section">
   <div class="container">
     <p class="section-label reveal">Investment</p>
-    <h2 class="invest-price reveal">$1,000</h2>
-    <p class="invest-period reveal">per month</p>
-    <p class="invest-details reveal">8 services · All platforms · Daily content · Ongoing partnership</p>
-    <p class="invest-note reveal">Flexible to your content volume. Let's find the right fit.</p>
+    <div class="invest-grid">
+      <div class="plan-card stagger">
+        <p class="plan-name">Essential</p>
+        <p class="plan-price">$1,000</p>
+        <p class="plan-period">per month</p>
+        <ul class="plan-list">
+          <li>3 posts per week across platforms</li>
+          <li>2 edited long-form videos</li>
+          <li>8 short-form clips (Reels / Shorts)</li>
+          <li>Thumbnails & graphics for all content</li>
+          <li>Content calendar & scheduling</li>
+          <li>Monthly analytics summary</li>
+        </ul>
+      </div>
+      <div class="plan-card recommended stagger">
+        <span class="plan-badge">Recommended</span>
+        <p class="plan-name">Daily</p>
+        <p class="plan-price">$1,500</p>
+        <p class="plan-period">per month</p>
+        <ul class="plan-list">
+          <li>Daily posting across all platforms</li>
+          <li>4 edited long-form videos</li>
+          <li>12+ short-form clips (Reels / Shorts)</li>
+          <li>Thumbnails & graphics for all content</li>
+          <li>Content calendar & full scheduling</li>
+          <li>Content repurposing & brand consistency</li>
+          <li>Weekly analytics & growth strategy</li>
+        </ul>
+      </div>
+    </div>
+    <p class="invest-note reveal">Both plans include all 8 services. Choose what fits your content goals — you can always adjust.</p>
   </div>
 </section>
 
