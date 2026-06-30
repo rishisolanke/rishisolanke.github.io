@@ -330,6 +330,8 @@ const serviceObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.05 });
 const grid = document.getElementById('serviceGrid');
 if (grid) serviceObs.observe(grid);
+const investGrid = document.querySelector('.invest-grid');
+if (investGrid) serviceObs.observe(investGrid);
 </script>
 </body>
 </html>
