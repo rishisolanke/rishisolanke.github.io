@@ -3,135 +3,173 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#F4F8FC">
+<meta name="theme-color" content="#ffffff">
 <title>AWAKEN Media Proposal</title>
 <meta property="og:title" content="AWAKEN Media Proposal">
 <meta property="og:description" content="Content management for Kathy Katts">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --blue:#A8C9EC;--blue-light:#C5DDF0;--blue-pale:#E0EDF8;--blue-deep:#7BA8D4;
-  --bg:#F4F8FC;--bg-warm:#EDF4FB;
-  --navy:#1A2A45;--navy-mid:#3D5070;--navy-light:#6B82A0;
-  --glass:rgba(255,255,255,0.55);--glass-border:rgba(168,201,236,0.2);
-  --lavender:rgba(196,181,224,0.15);--rose:rgba(168,201,236,0.08);
+  --pink:#E1306C;--purple:#833AB4;--orange:#F77737;--yellow:#FCAF45;
+  --bg:#ffffff;--bg-card:#f8f8fa;--bg-elevated:#f0f0f4;
+  --text:#1a1a2e;--text-mid:#555;--text-dim:#888;
+  --glass:rgba(0,0,0,0.03);--glass-border:rgba(0,0,0,0.08);
+  --gradient:linear-gradient(135deg,var(--yellow),var(--orange),var(--pink),var(--purple));
+  --gradient-h:linear-gradient(90deg,var(--yellow),var(--orange),var(--pink),var(--purple));
+  --gradient-subtle:linear-gradient(135deg,rgba(252,175,69,.1),rgba(225,48,108,.1),rgba(131,58,180,.1));
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--navy);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--blue);border-radius:4px}
+::-webkit-scrollbar-thumb{background:var(--pink);border-radius:4px}
 
 .reveal{opacity:0;transform:translateY(32px) translateZ(0);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
 .reveal.visible{opacity:1;transform:translateY(0) translateZ(0)}
 .stagger{opacity:0;transform:translateY(24px) translateZ(0);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
 .stagger.visible{opacity:1;transform:translateY(0) translateZ(0)}
 
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@keyframes spin-r{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
-@keyframes drift{
-  0%{transform:translate(0,0) scale(1);opacity:.4}
-  25%{transform:translate(30px,-80px) scale(1.1);opacity:.6}
-  50%{transform:translate(-20px,-160px) scale(.9);opacity:.3}
-  75%{transform:translate(40px,-240px) scale(1.05);opacity:.5}
-  100%{transform:translate(0,-320px) scale(1);opacity:0}
-}
-@keyframes glow-pulse{0%,100%{text-shadow:0 0 30px rgba(168,201,236,.3)}50%{text-shadow:0 0 60px rgba(168,201,236,.5),0 0 100px rgba(168,201,236,.2)}}
+.grad-text{background:var(--gradient-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-20px) rotate(2deg)}50%{transform:translateY(-8px) rotate(-1deg)}75%{transform:translateY(-16px) rotate(1deg)}}
+@keyframes pulse-glow{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.7;transform:scale(1.05)}}
+@keyframes slide-gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes fade-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
-@keyframes fade-in{from{opacity:0}to{opacity:1}}
-@keyframes breathe{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.15);opacity:1}}
+@keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes story-pulse{0%,100%{box-shadow:0 0 0 0 rgba(225,48,108,.4)}50%{box-shadow:0 0 0 12px rgba(225,48,108,0)}}
 
-.particle{position:fixed;border-radius:50%;pointer-events:none;z-index:0;animation:drift linear infinite;will-change:transform,opacity}
-.p1{width:6px;height:6px;background:rgba(168,201,236,.4);left:10%;bottom:-10px;animation-duration:22s;animation-delay:-3s}
-.p3{width:8px;height:8px;background:rgba(196,181,224,.25);left:45%;bottom:-10px;animation-duration:20s;animation-delay:-1s}
-.p4{width:5px;height:5px;background:rgba(168,201,236,.35);left:60%;bottom:-10px;animation-duration:25s;animation-delay:-12s}
-.p6{width:7px;height:7px;background:rgba(168,201,236,.2);left:88%;bottom:-10px;animation-duration:24s;animation-delay:-15s}
-.p8{width:6px;height:6px;background:rgba(196,181,224,.25);left:55%;bottom:-10px;animation-duration:19s;animation-delay:-6s}
-.p10{width:3px;height:3px;background:rgba(168,201,236,.4);left:80%;bottom:-10px;animation-duration:21s;animation-delay:-2s}
+/* Floating gradient orbs */
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);will-change:transform}
+.orb-1{width:300px;height:300px;background:rgba(131,58,180,.08);top:10%;left:-5%;animation:float 20s ease-in-out infinite}
+.orb-2{width:250px;height:250px;background:rgba(225,48,108,.06);top:40%;right:-8%;animation:float 25s ease-in-out infinite 3s}
+.orb-3{width:200px;height:200px;background:rgba(252,175,69,.06);bottom:10%;left:20%;animation:float 22s ease-in-out infinite 6s}
 
-.mandala-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0}
-.mandala-outer{width:min(750px,140vw);height:min(750px,140vw);animation:spin 120s linear infinite;opacity:.32;will-change:transform;transform:translateZ(0)}
-.mandala-inner{width:min(450px,85vw);height:min(450px,85vw);animation:spin-r 90s linear infinite;opacity:.25;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) translateZ(0);will-change:transform}
-.mandala-outer svg,.mandala-inner svg{width:100%;height:100%}
-
-section{position:relative;padding:80px 24px;z-index:1;contain:layout style paint}
+section{position:relative;padding:80px 24px;z-index:1}
 .container{max-width:1100px;margin:0 auto}
-.section-label{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--navy-light);margin-bottom:12px}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:8px}
-.section-sub{font-size:15px;color:var(--navy-mid);margin-bottom:40px}
+.section-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:var(--gradient-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
+.section-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:700;color:var(--text);line-height:1.15;margin-bottom:8px}
+.section-sub{font-size:15px;color:var(--text-mid);margin-bottom:40px}
 
 /* HERO */
-.hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg,#F4F8FC 0%,#E8F0F8 50%,#D6E5F5 100%);padding:40px 24px}
-.hero-label{font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--navy-light);opacity:0;animation:fade-in .8s ease .2s forwards}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600;color:var(--navy);margin:16px 0 4px;opacity:0;animation:fade-in .8s ease .4s forwards,glow-pulse 4s ease-in-out 1.2s infinite;line-height:1.1}
-.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;font-style:italic;color:var(--blue-deep);opacity:0;animation:fade-in .8s ease .7s forwards}
-.hero-tagline{font-size:15px;color:var(--navy-mid);margin-top:24px;opacity:0;animation:fade-in .8s ease 1s forwards;max-width:340px}
-.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:fade-in .6s ease 1.5s forwards}
-.scroll-hint span{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy-light)}
-.scroll-hint svg{animation:bounce 2s ease-in-out infinite;color:var(--navy-light)}
+.hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:var(--bg);padding:40px 24px}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(131,58,180,.04),transparent,rgba(225,48,108,.04),transparent,rgba(252,175,69,.03),transparent);animation:spin-slow 30s linear infinite;z-index:0}
+.hero-ring{position:absolute;width:min(500px,90vw);height:min(500px,90vw);border-radius:50%;border:1.5px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,var(--gradient) border-box;opacity:.2;animation:pulse-glow 6s ease-in-out infinite}
+.hero-ring-2{position:absolute;width:min(350px,65vw);height:min(350px,65vw);border-radius:50%;border:1px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,var(--gradient) border-box;opacity:.15;animation:pulse-glow 6s ease-in-out infinite 2s}
+.hero-label{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--text-mid);opacity:0;animation:fade-in .8s ease .2s forwards;z-index:1;position:relative}
+.hero-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:56px;font-weight:800;margin:16px 0 4px;opacity:0;animation:fade-in .8s ease .4s forwards;line-height:1.05;z-index:1;position:relative}
+.hero-subtitle{font-size:20px;font-weight:300;color:var(--text-mid);opacity:0;animation:fade-in .8s ease .7s forwards;z-index:1;position:relative}
+.hero-tagline{font-size:15px;color:var(--text-dim);margin-top:28px;opacity:0;animation:fade-in .8s ease 1s forwards;max-width:340px;z-index:1;position:relative}
+.hero-platforms{display:flex;gap:16px;margin-top:32px;opacity:0;animation:fade-in .8s ease 1.2s forwards;z-index:1;position:relative}
+.platform-icon{width:36px;height:36px;border-radius:10px;background:var(--bg-card);border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;color:var(--text-mid);transition:all .3s ease}
+.platform-icon:hover{border-color:var(--pink);color:var(--pink);transform:translateY(-2px)}
+.platform-icon svg{width:18px;height:18px}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:fade-in .6s ease 1.5s forwards;z-index:1}
+.scroll-hint span{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim)}
+.scroll-hint svg{animation:bounce 2s ease-in-out infinite;color:var(--text-dim)}
 
 /* INTRO */
-.intro-section{background:var(--bg-warm);padding:80px 24px}
+.intro-section{padding:80px 24px;position:relative}
+.intro-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gradient-h)}
 .intro-layout{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:600px;margin:0 auto}
-.intro-layout h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--navy);margin-bottom:16px}
-.intro-layout p{font-size:15px;color:var(--navy-mid);line-height:1.8}
+.intro-layout h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:700;color:var(--text);margin-bottom:16px}
+.intro-layout p{font-size:15px;color:var(--text-mid);line-height:1.8}
+.intro-stats{display:flex;gap:32px;margin-top:36px;flex-wrap:wrap;justify-content:center}
+.stat{text-align:center}
+.stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;background:var(--gradient-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:11px;color:var(--text-dim);margin-top:4px;text-transform:uppercase;letter-spacing:1px}
 
 /* SERVICES */
-.services-section{padding:80px 24px;background:var(--bg)}
+.services-section{padding:80px 24px}
 .services-grid{display:grid;grid-template-columns:1fr;gap:12px}
-.service-card{background:rgba(255,255,255,0.7);border:1px solid var(--glass-border);border-radius:16px;padding:20px;transition:transform .3s ease,box-shadow .3s ease;transform:translateZ(0)}
-.service-card:active{transform:scale(.97)}
-.si{width:32px;height:32px;margin-bottom:12px;display:block;color:var(--blue-deep)}
-.si svg{width:100%;height:100%;animation:breathe 4s ease-in-out infinite;animation-play-state:paused}
-.service-card:hover .si svg,.stagger.visible .si svg{animation-play-state:running}
-.service-title{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px}
-.service-desc{font-size:12px;color:var(--navy-mid);line-height:1.5}
+.service-card{background:var(--bg-card);border:1px solid var(--glass-border);border-radius:16px;padding:24px;transition:all .3s ease;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient-h);opacity:0;transition:opacity .3s ease}
+.service-card:hover::before{opacity:1}
+.service-card:hover{border-color:rgba(225,48,108,.2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(225,48,108,.1)}
+.si{width:36px;height:36px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--gradient-subtle)}
+.si svg{width:20px;height:20px;color:var(--pink)}
+.service-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px}
+.service-desc{font-size:12px;color:var(--text-mid);line-height:1.6}
 
 /* HOW IT WORKS */
-.how-section{background:var(--bg-warm);padding:80px 24px}
-.timeline{position:relative;padding-left:40px;margin-top:20px}
-.timeline::before{content:'';position:absolute;left:14px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--blue),var(--lavender),var(--blue-pale))}
+.how-section{padding:80px 24px;position:relative}
+.how-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gradient-h)}
+.timeline{position:relative;padding-left:44px;margin-top:20px}
+.timeline::before{content:'';position:absolute;left:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--yellow),var(--pink),var(--purple))}
 .tl-item{position:relative;padding-bottom:36px}
 .tl-item:last-child{padding-bottom:0}
-.tl-dot{position:absolute;left:-40px;top:2px;width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--navy);z-index:1;transition:background .4s ease,color .4s ease}
-.tl-item.visible .tl-dot{background:var(--blue);color:#fff}
-.tl-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:4px}
-.tl-desc{font-size:13px;color:var(--navy-mid);line-height:1.6}
+.tl-dot{position:absolute;left:-44px;top:2px;width:30px;height:30px;border-radius:50%;background:#fff;border:2px solid transparent;background-clip:padding-box;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--text-mid);z-index:1;transition:all .4s ease}
+.tl-dot::before{content:'';position:absolute;inset:-2px;border-radius:50%;background:var(--gradient);z-index:-1}
+.tl-item.visible .tl-dot{color:var(--text)}
+.tl-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px}
+.tl-desc{font-size:13px;color:var(--text-mid);line-height:1.6}
 
 /* INVESTMENT */
-.invest-section{background:var(--bg);padding:80px 24px;text-align:center}
-.invest-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:680px;margin:32px auto 0}
-@media(max-width:600px){.invest-grid{grid-template-columns:1fr;max-width:340px}}
-.plan-card{background:#fff;border-radius:20px;padding:40px 28px 36px;border:1.5px solid var(--glass-border);position:relative;transition:transform .3s ease,box-shadow .3s ease}
-.plan-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(26,42,69,.08)}
-.plan-card.recommended{border-color:var(--blue)}
-.plan-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:600;padding:4px 16px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase}
-.plan-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--navy);margin-bottom:8px}
-.plan-price{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:var(--navy);margin-bottom:2px}
-.plan-period{font-size:15px;color:var(--navy-mid);margin-bottom:20px}
+.invest-section{padding:80px 24px;text-align:center;position:relative}
+.invest-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gradient-h)}
+.invest-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:720px;margin:32px auto 0}
+@media(max-width:600px){.invest-grid{grid-template-columns:1fr;max-width:360px}}
+.plan-card{background:var(--bg-card);border-radius:20px;padding:40px 28px 36px;border:1px solid var(--glass-border);position:relative;transition:all .3s ease;overflow:hidden}
+.plan-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gradient-h);opacity:0;transition:opacity .3s ease}
+.plan-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(225,48,108,.12);border-color:rgba(225,48,108,.2)}
+.plan-card:hover::after{opacity:1}
+.plan-card.recommended{border-color:rgba(225,48,108,.3)}
+.plan-card.recommended::after{opacity:1}
+.plan-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gradient-h);background-size:200% 200%;animation:slide-gradient 3s ease infinite;color:#fff;font-size:10px;font-weight:700;padding:5px 18px;border-radius:0 0 12px 12px;letter-spacing:1px;text-transform:uppercase}
+.plan-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:var(--text);margin-bottom:8px;margin-top:8px}
+.plan-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:44px;font-weight:800;margin-bottom:2px;background:var(--gradient-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.plan-period{font-size:14px;color:var(--text-dim);margin-bottom:24px}
 .plan-list{list-style:none;text-align:left;margin:0;padding:0}
-.plan-list li{font-size:13px;color:var(--navy-mid);padding:6px 0;border-bottom:1px solid var(--blue-pale);display:flex;align-items:baseline;gap:8px;line-height:1.5}
+.plan-list li{font-size:12.5px;color:var(--text-mid);padding:7px 0;border-bottom:1px solid var(--glass-border);display:flex;align-items:baseline;gap:10px;line-height:1.5}
 .plan-list li:last-child{border-bottom:none}
-.plan-list li::before{content:'✓';color:var(--blue-deep);font-weight:700;flex-shrink:0}
-.invest-note{font-size:13px;font-style:italic;color:var(--navy-light);max-width:500px;margin:28px auto 0;line-height:1.6}
+.plan-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gradient);flex-shrink:0;margin-top:4px}
+.invest-note{font-size:13px;color:var(--text-dim);max-width:500px;margin:28px auto 0;line-height:1.6}
 
 /* CTA */
-.cta-section{background:var(--bg-warm);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
-.cta-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--navy);line-height:1.2;position:relative;z-index:1}
-.cta-sub{font-size:15px;color:var(--navy-mid);margin-top:12px;position:relative;z-index:1}
+.cta-section{padding:100px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gradient-h)}
+.cta-glow{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(225,48,108,.06),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cta-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:800;line-height:1.2;position:relative;z-index:1}
+.cta-sub{font-size:15px;color:var(--text-mid);margin-top:12px;position:relative;z-index:1}
 
 /* FOOTER */
-.footer{text-align:center;padding:60px 24px 40px;background:linear-gradient(180deg,var(--bg-warm) 0%,var(--bg) 100%)}
-.footer-cta{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--navy);margin-bottom:24px}
-.footer-from{font-size:13px;color:var(--navy-light);margin-bottom:4px}
-.footer-name{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:4px}
-.footer-date{font-size:13px;color:var(--navy-light)}
-.footer-mandala{width:60px;height:60px;margin:30px auto 0;opacity:.35;animation:spin 60s linear infinite}
+.footer{text-align:center;padding:60px 24px 40px;position:relative}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gradient-h);opacity:.3}
+.footer-cta{font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:700;margin-bottom:24px}
+.footer-from{font-size:13px;color:var(--text-dim);margin-bottom:4px}
+.footer-name{font-size:16px;font-weight:600;color:var(--text);margin-bottom:4px}
+.footer-date{font-size:13px;color:var(--text-dim)}
+.footer-gradient{width:60px;height:4px;border-radius:4px;background:var(--gradient-h);margin:24px auto 0}
+
+/* PHONE MOCKUP */
+.phone-float{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:180px;z-index:1;animation:float 8s ease-in-out infinite;display:none}
+@media(min-width:768px){.phone-float{display:block}}
+.phone-frame{background:#fff;border-radius:24px;border:2px solid var(--glass-border);padding:8px;box-shadow:0 20px 60px rgba(0,0,0,.1)}
+.phone-screen{background:var(--bg-card);border-radius:18px;overflow:hidden}
+.phone-header{display:flex;align-items:center;gap:8px;padding:12px;border-bottom:1px solid var(--glass-border)}
+.phone-avatar{width:28px;height:28px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
+.phone-name{font-size:11px;font-weight:600;color:var(--text)}
+.phone-handle{font-size:9px;color:var(--text-dim)}
+.phone-post{aspect-ratio:1;background:var(--gradient-subtle);display:flex;align-items:center;justify-content:center}
+.phone-post svg{width:40px;height:40px;color:rgba(255,255,255,.3)}
+.phone-actions{display:flex;gap:12px;padding:10px 12px}
+.phone-actions svg{width:16px;height:16px;color:var(--text-mid)}
+.phone-likes{font-size:10px;font-weight:600;color:var(--text);padding:0 12px}
+.phone-caption{font-size:9px;color:var(--text-mid);padding:4px 12px 12px;line-height:1.4}
+
+/* STORY CIRCLES */
+.story-row{display:flex;gap:16px;justify-content:center;margin-top:40px;opacity:0;animation:fade-in .8s ease 1.4s forwards;z-index:1;position:relative}
+.story-circle{display:flex;flex-direction:column;align-items:center;gap:6px}
+.story-ring{width:52px;height:52px;border-radius:50%;background:var(--gradient);padding:2.5px;animation:story-pulse 3s ease-in-out infinite}
+.story-ring:nth-child(1){animation-delay:0s}
+.story-inner{width:100%;height:100%;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+.story-inner svg{width:20px;height:20px;color:var(--text-mid)}
+.story-label{font-size:9px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px}
 
 @media(min-width:400px){
   .services-grid{grid-template-columns:repeat(2,1fr)}
@@ -147,7 +185,6 @@ section{position:relative;padding:80px 24px;z-index:1;contain:layout style paint
   .services-grid{grid-template-columns:repeat(2,1fr);max-width:800px;margin:0 auto;gap:16px}
   .hero-title{font-size:80px}
   .section-title{font-size:48px}
-  .service-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(168,201,236,.15)}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}
@@ -157,44 +194,57 @@ section{position:relative;padding:80px 24px;z-index:1;contain:layout style paint
 </head>
 <body>
 
-<div class="particle p1"></div><div class="particle p3"></div>
-<div class="particle p4"></div><div class="particle p6"></div>
-<div class="particle p8"></div><div class="particle p10"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="mandala-wrap">
-    <div class="mandala-outer">
-      <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <g stroke="rgba(168,201,236,.7)" stroke-width="1.2">
-          <ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(0 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(22.5 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(45 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(67.5 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(90 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(112.5 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(135 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(157.5 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(180 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(202.5 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(225 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(247.5 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(270 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(292.5 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(315 400 400)"/><ellipse cx="400" cy="160" rx="18" ry="70" transform="rotate(337.5 400 400)"/>
-        </g>
-        <g stroke="rgba(196,181,224,.65)" stroke-width="1">
-          <ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(0 400 400)"/><ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(30 400 400)"/><ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(60 400 400)"/><ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(90 400 400)"/><ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(120 400 400)"/><ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(150 400 400)"/><ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(180 400 400)"/><ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(210 400 400)"/><ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(240 400 400)"/><ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(270 400 400)"/><ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(300 400 400)"/><ellipse cx="400" cy="220" rx="14" ry="55" transform="rotate(330 400 400)"/>
-        </g>
-        <circle cx="400" cy="400" r="340" stroke="rgba(168,201,236,.35)" stroke-width=".8"/><circle cx="400" cy="400" r="280" stroke="rgba(196,181,224,.32)" stroke-width=".8"/><circle cx="400" cy="400" r="220" stroke="rgba(168,201,236,.35)" stroke-width=".8"/><circle cx="400" cy="400" r="160" stroke="rgba(196,181,224,.32)" stroke-width=".8"/><circle cx="400" cy="400" r="100" stroke="rgba(168,201,236,.38)" stroke-width=".8"/><circle cx="400" cy="400" r="50" stroke="rgba(168,201,236,.42)" stroke-width="1"/>
-        <g stroke="rgba(196,181,224,.35)" stroke-width=".8"><circle cx="400" cy="400" r="80"/><circle cx="400" cy="320" r="80"/><circle cx="469" cy="360" r="80"/><circle cx="469" cy="440" r="80"/><circle cx="400" cy="480" r="80"/><circle cx="331" cy="440" r="80"/><circle cx="331" cy="360" r="80"/></g>
-      </svg>
-    </div>
-    <div class="mandala-inner">
-      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <g stroke="rgba(196,181,224,.7)" stroke-width="1">
-          <ellipse cx="250" cy="120" rx="12" ry="50" transform="rotate(0 250 250)"/><ellipse cx="250" cy="120" rx="12" ry="50" transform="rotate(45 250 250)"/><ellipse cx="250" cy="120" rx="12" ry="50" transform="rotate(90 250 250)"/><ellipse cx="250" cy="120" rx="12" ry="50" transform="rotate(135 250 250)"/><ellipse cx="250" cy="120" rx="12" ry="50" transform="rotate(180 250 250)"/><ellipse cx="250" cy="120" rx="12" ry="50" transform="rotate(225 250 250)"/><ellipse cx="250" cy="120" rx="12" ry="50" transform="rotate(270 250 250)"/><ellipse cx="250" cy="120" rx="12" ry="50" transform="rotate(315 250 250)"/>
-        </g>
-        <circle cx="250" cy="250" r="180" stroke="rgba(168,201,236,.35)" stroke-width=".8"/><circle cx="250" cy="250" r="130" stroke="rgba(196,181,224,.32)" stroke-width=".8"/><circle cx="250" cy="250" r="80" stroke="rgba(168,201,236,.35)" stroke-width=".8"/><circle cx="250" cy="250" r="35" stroke="rgba(196,181,224,.42)" stroke-width="1"/>
-        <polygon points="250,100 380,350 120,350" stroke="rgba(168,201,236,.28)" stroke-width=".8"/><polygon points="250,400 120,150 380,150" stroke="rgba(196,181,224,.25)" stroke-width=".8"/>
-      </svg>
-    </div>
-  </div>
+  <div class="hero-ring"></div>
+  <div class="hero-ring-2"></div>
 
   <span class="hero-label">Content Proposal</span>
-  <h1 class="hero-title">AWAKEN Media</h1>
+  <h1 class="hero-title"><span class="grad-text">AWAKEN</span> Media</h1>
   <p class="hero-subtitle">with Kathy Katts</p>
-  <p class="hero-tagline">Your content, elevated</p>
+  <p class="hero-tagline">I make the content. You focus on what you do best.</p>
+
+  <div class="hero-platforms">
+    <div class="platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="18" cy="6" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+    <div class="platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+    <div class="platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.38 8.59 8.59 0 01-2.72 1.04 4.28 4.28 0 00-7.32 3.91A12.14 12.14 0 013 5.67a4.28 4.28 0 001.32 5.72 4.24 4.24 0 01-1.94-.54v.05a4.28 4.28 0 003.43 4.19 4.27 4.27 0 01-1.93.07 4.28 4.28 0 004 2.97A8.58 8.58 0 012 19.54a12.1 12.1 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2l-.01-.56A8.72 8.72 0 0024 5.06a8.5 8.5 0 01-2.54.7z" fill="currentColor" stroke="none"/></svg></div>
+    <div class="platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor" stroke="none"/></svg></div>
+  </div>
+
+  <div class="story-row">
+    <div class="story-circle"><div class="story-ring"><div class="story-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5,3 19,12 5,21"/></svg></div></div><span class="story-label">Reels</span></div>
+    <div class="story-circle"><div class="story-ring" style="animation-delay:.5s"><div class="story-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="9"/></svg></div></div><span class="story-label">Posts</span></div>
+    <div class="story-circle"><div class="story-ring" style="animation-delay:1s"><div class="story-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg></div></div><span class="story-label">Stories</span></div>
+    <div class="story-circle"><div class="story-ring" style="animation-delay:1.5s"><div class="story-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M12 4v16"/></svg></div></div><span class="story-label">Shorts</span></div>
+  </div>
 
   <div class="scroll-hint">
     <span>Scroll</span>
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 4v12M5 11l5 5 5-5"/></svg>
+  </div>
+
+  <!-- Phone mockup -->
+  <div class="phone-float">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-header">
+          <div class="phone-avatar">AK</div>
+          <div><div class="phone-name">awakenwithkathy</div><div class="phone-handle">Original Audio</div></div>
+        </div>
+        <div class="phone-post"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="phone-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+        </div>
+        <div class="phone-likes">2,847 views</div>
+        <div class="phone-caption"><b>awakenwithkathy</b> Finding stillness in every breath. Today's practice...</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -202,8 +252,13 @@ section{position:relative;padding:80px 24px;z-index:1;contain:layout style paint
 <section class="intro-section">
   <div class="intro-layout">
     <p class="section-label reveal">The Idea</p>
-    <h2 class="reveal">Focus on teaching. I'll handle the rest.</h2>
-    <p class="reveal">You create the teachings. I turn them into polished videos, eye-catching graphics, and a consistent social media presence. Your students find you, your message reaches further, and you never have to think about editing software or posting schedules.</p>
+    <h2 class="reveal">Focus on teaching.<br><span class="grad-text">I'll handle the rest.</span></h2>
+    <p class="reveal">You record your teachings and send them to me. I edit the videos, make the graphics, write the captions, post everything, and keep your social media active and growing.</p>
+    <div class="intro-stats reveal">
+      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Services</div></div>
+      <div class="stat"><div class="stat-num">All</div><div class="stat-label">Platforms</div></div>
+      <div class="stat"><div class="stat-num">Daily</div><div class="stat-label">Content</div></div>
+    </div>
   </div>
 </section>
 
@@ -211,26 +266,26 @@ section{position:relative;padding:80px 24px;z-index:1;contain:layout style paint
 <section class="services-section">
   <div class="container">
     <p class="section-label reveal">What You Get</p>
-    <h2 class="section-title reveal">Everything to Grow Your Reach</h2>
-    <p class="section-sub reveal">8 services, one monthly partnership</p>
+    <h2 class="section-title reveal">What's <span class="grad-text">Included</span></h2>
+    <p class="section-sub reveal">8 services, all in one monthly package</p>
 
     <div class="services-grid" id="serviceGrid">
 
-      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="7" width="22" height="16" rx="3"/><polygon points="14,12 14,20 21,16" fill="currentColor" stroke="none" opacity=".5"/></svg></span><div class="service-title">Video Editing</div><div class="service-desc">Long-form dharma talks and teachings, polished and ready for YouTube</div></div>
+      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="14" rx="2"/><polygon points="10,8 10,14 15,11" fill="currentColor" opacity=".4" stroke="none"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span><div class="service-title">Video Editing</div><div class="service-desc">I take your raw footage and turn it into a finished video with music, sound effects, zooms, smooth transitions, and b-roll cuts</div></div>
 
-      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="10" y="4" width="12" height="24" rx="3"/><line x1="10" y1="8" x2="22" y2="8"/><line x1="10" y1="24" x2="22" y2="24"/><polygon points="14,14 14,20 19,17" fill="currentColor" stroke="none" opacity=".4"/></svg></span><div class="service-title">Short-Form Content</div><div class="service-desc">Reels, TikToks, and YouTube Shorts that capture attention in seconds</div></div>
+      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="7" y1="5" x2="17" y2="5"/><line x1="7" y1="19" x2="17" y2="19"/><polygon points="10,10 10,15 14,12.5" fill="currentColor" opacity=".4" stroke="none"/></svg></span><div class="service-title">Short-Form Content</div><div class="service-desc">I clip the best moments from your videos and turn them into Reels, TikToks, and Shorts with captions, hooks, and trending audio</div></div>
 
-      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="6" width="20" height="20" rx="2"/><circle cx="13" cy="14" r="3"/><path d="M6 22l6-6 4 4 4-5 6 7"/></svg></span><div class="service-title">Thumbnails & Graphics</div><div class="service-desc">Eye-catching visuals for every video, post, and story</div></div>
+      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="10" r="2.5"/><path d="M3 18l5-5 3 3 4-5 6 7"/></svg></span><div class="service-title">Thumbnails & Graphics</div><div class="service-desc">Every video gets a custom thumbnail with bold text, clean colors, and a look that makes people want to click</div></div>
 
-      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="16" cy="16" r="10"/><path d="M16 6v4"/><path d="M16 22v4"/><path d="M6 16h4"/><path d="M22 16h4"/><circle cx="16" cy="16" r="4" fill="currentColor" opacity=".12" stroke="none"/><path d="M12 10l1.5 1.5"/><path d="M18.5 20.5l1.5 1.5"/></svg></span><div class="service-title">Social Media Management</div><div class="service-desc">Posting, scheduling, captions, and hashtags across all platforms</div></div>
+      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="18" cy="6" r="1.5" fill="currentColor" opacity=".4" stroke="none"/></svg></span><div class="service-title">Social Media Management</div><div class="service-desc">I handle posting, writing captions, picking hashtags, and keeping your Instagram, YouTube, and TikTok active</div></div>
 
-      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="6" width="22" height="20" rx="3"/><line x1="5" y1="12" x2="27" y2="12"/><line x1="11" y1="6" x2="11" y2="12"/><line x1="21" y1="6" x2="21" y2="12"/><circle cx="11" cy="18" r="1.5" fill="currentColor" opacity=".3" stroke="none"/><circle cx="16" cy="18" r="1.5" fill="currentColor" opacity=".3" stroke="none"/><circle cx="21" cy="18" r="1.5" fill="currentColor" opacity=".3" stroke="none"/><circle cx="11" cy="23" r="1.5" fill="currentColor" opacity=".3" stroke="none"/></svg></span><div class="service-title">Content Calendar</div><div class="service-desc">A planned, consistent posting schedule so your audience always knows when to expect you</div></div>
+      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="4" x2="8" y2="9"/><line x1="16" y1="4" x2="16" y2="9"/><circle cx="8" cy="14" r="1" fill="currentColor" opacity=".4" stroke="none"/><circle cx="12" cy="14" r="1" fill="currentColor" opacity=".4" stroke="none"/><circle cx="16" cy="14" r="1" fill="currentColor" opacity=".4" stroke="none"/></svg></span><div class="service-title">Content Calendar</div><div class="service-desc">I plan out what goes up and when, so your content stays consistent and your audience knows when to check in</div></div>
 
-      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 8h16v16H8z" rx="2"/><path d="M12 4v4"/><path d="M20 4v4"/><path d="M16 14v8"/><path d="M12 18h8"/></svg></span><div class="service-title">Content Repurposing</div><div class="service-desc">One teaching becomes a YouTube video, 3 shorts, a quote graphic, and a story</div></div>
+      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 4v16M17 4v16"/><path d="M4 7h16M4 17h16"/><path d="M12 9v6M9 12h6"/></svg></span><div class="service-title">Content Repurposing</div><div class="service-desc">I take one video you record and turn it into a YouTube upload, 3 shorts, a quote graphic, and an Instagram story</div></div>
 
-      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="6,22 10,14 14,18 18,10 22,16 26,8"/><circle cx="26" cy="8" r="2" fill="currentColor" opacity=".3" stroke="none"/><line x1="6" y1="26" x2="26" y2="26"/></svg></span><div class="service-title">Analytics & Growth</div><div class="service-desc">Track what's working, what's not, and adjust the strategy to grow</div></div>
+      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4,18 8,12 12,15 16,8 20,4"/><circle cx="20" cy="4" r="2" fill="currentColor" opacity=".4" stroke="none"/><line x1="4" y1="22" x2="20" y2="22"/></svg></span><div class="service-title">Analytics & Growth</div><div class="service-desc">I track what videos are doing well, research the right keywords, and write titles and descriptions that help people find you</div></div>
 
-      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="16" cy="16" r="10"/><path d="M16 6l2 7h7l-5.5 4 2 7L16 20l-5.5 4 2-7L7 13h7z" fill="currentColor" opacity=".12" stroke="none"/><circle cx="16" cy="16" r="3"/></svg></span><div class="service-title">Brand Consistency</div><div class="service-desc">A unified look and feel across every platform, so your brand is instantly recognizable</div></div>
+      <div class="service-card stagger"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span><div class="service-title">Visualizations & Animations</div><div class="service-desc">I create animated visuals, moving text, and graphic overlays that make your videos more interesting and easier to follow</div></div>
 
     </div>
   </div>
@@ -240,12 +295,12 @@ section{position:relative;padding:80px 24px;z-index:1;contain:layout style paint
 <section class="how-section">
   <div class="container">
     <p class="section-label reveal">How It Works</p>
-    <h2 class="section-title reveal">Simple, Every Month</h2>
-    <p class="section-sub reveal">You teach. I create. We grow.</p>
+    <h2 class="section-title reveal">How It <span class="grad-text">Works</span></h2>
+    <p class="section-sub reveal">Super simple, same thing every month</p>
     <div class="timeline">
-      <div class="tl-item reveal"><div class="tl-dot">1</div><div class="tl-title">You Send</div><div class="tl-desc">Raw footage, voice memos, ideas, photos. Whatever you have, however you have it.</div></div>
-      <div class="tl-item reveal"><div class="tl-dot">2</div><div class="tl-title">I Create</div><div class="tl-desc">I edit, design, write captions, and prepare everything for posting.</div></div>
-      <div class="tl-item reveal"><div class="tl-dot">3</div><div class="tl-title">You Approve</div><div class="tl-desc">Quick review, any tweaks, and it goes live. You stay in control without doing the work.</div></div>
+      <div class="tl-item reveal"><div class="tl-dot">1</div><div class="tl-title">You Send Me Your Stuff</div><div class="tl-desc">Raw video, voice notes, photos, ideas, whatever you have. Doesn't need to be perfect, I'll work with it.</div></div>
+      <div class="tl-item reveal"><div class="tl-dot">2</div><div class="tl-title">I Put It All Together</div><div class="tl-desc">I edit the videos, design the thumbnails, write captions, build out the animations, and get everything ready to post.</div></div>
+      <div class="tl-item reveal"><div class="tl-dot">3</div><div class="tl-title">You Check It</div><div class="tl-desc">You look it over, tell me if anything needs changing, and once you're good with it, it goes up.</div></div>
     </div>
   </div>
 </section>
@@ -260,15 +315,15 @@ section{position:relative;padding:80px 24px;z-index:1;contain:layout style paint
         <p class="plan-price">$1,000</p>
         <p class="plan-period">per month</p>
         <ul class="plan-list">
-          <li>3 posts per week across platforms</li>
-          <li>2 edited long-form videos with sound design, zooms, transitions & effects</li>
-          <li>8 short-form clips (Reels / Shorts) with hooks, captions & trending audio</li>
-          <li>Custom visualizations & animations to bring teachings to life</li>
-          <li>Custom thumbnails with click-worthy text, color grading & brand visuals</li>
-          <li>Content scripting & storytelling structure for every piece</li>
-          <li>Keyword research & SEO-optimized titles, descriptions & hashtags</li>
-          <li>Content calendar & scheduling</li>
-          <li>Monthly analytics summary</li>
+          <li>3 posts per week across all platforms</li>
+          <li>2 fully edited long-form videos with music, sound effects, zooms, transitions, and cuts</li>
+          <li>8 short clips for Reels and Shorts with hooks, captions, and trending audio</li>
+          <li>Animated visuals and motion graphics made for each video</li>
+          <li>Custom thumbnails with bold text, color grading, and your brand look</li>
+          <li>I write the scripts and structure the story for every video</li>
+          <li>Keyword research and SEO titles, descriptions, and hashtags so people find you</li>
+          <li>Full content calendar with scheduling</li>
+          <li>Monthly report on what's working and what's not</li>
         </ul>
       </div>
       <div class="plan-card recommended stagger">
@@ -277,45 +332,41 @@ section{position:relative;padding:80px 24px;z-index:1;contain:layout style paint
         <p class="plan-price">$1,500</p>
         <p class="plan-period">per month</p>
         <ul class="plan-list">
-          <li>Daily posting across all platforms</li>
-          <li>4 edited long-form videos with sound design, zooms, b-roll, transitions & effects</li>
-          <li>12+ short-form clips with hooks, animations, captions & trending audio</li>
-          <li>Custom visualizations, animations & motion graphics for every video</li>
-          <li>Custom thumbnails with click-worthy text, color grading & brand visuals</li>
-          <li>Content scripting, storytelling & narrative flow for every piece</li>
-          <li>Keyword research & SEO-optimized titles, descriptions & hashtags</li>
-          <li>Content repurposing & brand consistency across platforms</li>
-          <li>Content calendar & full scheduling</li>
-          <li>Weekly analytics & growth strategy</li>
+          <li>Something goes up every single day across all platforms</li>
+          <li>4 fully edited long-form videos with music, sound, zooms, b-roll, transitions, and effects</li>
+          <li>12+ short clips with hooks, animations, captions, and trending audio</li>
+          <li>Animated visuals, motion graphics, and custom illustrations for every video</li>
+          <li>Custom thumbnails with bold text, color grading, and your brand look</li>
+          <li>I write the scripts, build the story, and shape the flow for every piece</li>
+          <li>Keyword research and SEO titles, descriptions, and hashtags so people find you</li>
+          <li>I repurpose your content across platforms so nothing goes to waste</li>
+          <li>Full content calendar with daily scheduling</li>
+          <li>Weekly breakdown of what's growing and what to do next</li>
         </ul>
       </div>
     </div>
-    <p class="invest-note reveal">Both plans include all 8 services. Choose what fits your content goals — you can always adjust.</p>
+    <p class="invest-note reveal">Both plans include all 8 services. Pick the one that fits and we can always change it later.</p>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-section">
+  <div class="cta-glow"></div>
   <div class="container">
     <p class="section-label reveal">Next Step</p>
-    <h2 class="cta-title reveal">Let's grow your reach</h2>
-    <p class="cta-sub reveal">Your teachings deserve to be seen</p>
+    <h2 class="cta-title reveal"><span class="grad-text">Ready when you are</span></h2>
+    <p class="cta-sub reveal">Let's get your content out there</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <p class="footer-cta reveal">Let's build something to awaken</p>
+    <p class="footer-cta reveal"><span class="grad-text">Let's make it happen</span></p>
     <p class="footer-from reveal">From</p>
     <p class="footer-name reveal">Rushi Solanke</p>
     <p class="footer-date reveal">June 2026</p>
-    <div class="footer-mandala">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <g stroke="rgba(168,201,236,.7)" stroke-width="1"><ellipse cx="50" cy="20" rx="5" ry="18" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="5" ry="18" transform="rotate(45 50 50)"/><ellipse cx="50" cy="20" rx="5" ry="18" transform="rotate(90 50 50)"/><ellipse cx="50" cy="20" rx="5" ry="18" transform="rotate(135 50 50)"/><ellipse cx="50" cy="20" rx="5" ry="18" transform="rotate(180 50 50)"/><ellipse cx="50" cy="20" rx="5" ry="18" transform="rotate(225 50 50)"/><ellipse cx="50" cy="20" rx="5" ry="18" transform="rotate(270 50 50)"/><ellipse cx="50" cy="20" rx="5" ry="18" transform="rotate(315 50 50)"/></g>
-        <circle cx="50" cy="50" r="40" stroke="rgba(196,181,224,.45)" stroke-width=".5"/><circle cx="50" cy="50" r="10" stroke="rgba(168,201,236,.55)" stroke-width=".8"/>
-      </svg>
-    </div>
+    <div class="footer-gradient"></div>
   </div>
 </footer>
 
