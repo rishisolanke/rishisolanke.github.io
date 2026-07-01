@@ -118,8 +118,16 @@
   .bsite h5{font-family:"Fraunces",serif;font-weight:500;font-size:30px;margin:10px 0 8px;max-width:16ch}
   .bsite p{font-size:14px;color:var(--ink-soft);max-width:34ch}
   .bsite .b-btn{display:inline-block;margin-top:18px;font-family:"Space Mono",monospace;font-size:12px;background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:100px}
-  .b-row{display:flex;gap:12px;margin-top:26px}
-  .b-row div{flex:1;height:52px;border-radius:8px;background:var(--white);border:1px solid var(--line)}
+  .bnav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 14px;padding:14px 34px;background:var(--white);border-bottom:1px solid var(--line)}
+  .bnav-brand{font-family:"Fraunces",serif;font-weight:600;font-size:15px;color:var(--ink)}
+  .bnav-links{display:flex;gap:14px;flex-wrap:wrap;font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft)}
+  .bhero{display:flex;gap:24px;align-items:center;padding:36px 34px 20px;flex-wrap:wrap}
+  .bhero-text{flex:1 1 220px}
+  .bhero-img{flex:1 1 160px;min-height:120px;border-radius:10px;background:linear-gradient(135deg,#C98A46,#8B5A2B);display:flex;align-items:center;justify-content:center;font-size:34px}
+  .b-feat-row{display:flex;gap:12px;padding:0 34px 30px;flex-wrap:wrap}
+  .b-feat{flex:1 1 120px;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center;font-size:12px;color:var(--ink-soft)}
+  .b-feat-ic{display:block;font-size:20px;margin-bottom:6px}
+  .bfoot{padding:14px 34px;background:var(--paper-2);border-top:1px solid var(--line);font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft);text-align:center}
 
   /* steps */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -153,7 +161,7 @@
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow">Web developer · Larchmont, NY</div>
+      <div class="eyebrow">Web developer · Norwalk, CT</div>
       <h1>Websites that turn a phone tap into a <em>paying customer</em>.</h1>
       <p class="lead">I build fast, clean sites for local businesses. Flat price, done in days, no confusing tech talk.</p>
       <div class="cta-row">
@@ -280,13 +288,25 @@
     </div>
     <div class="browser">
       <div class="bbar"><i></i><i></i><i></i><span class="burl">maplewoodcafe.com</span></div>
-      <div class="bsite">
-        <div class="b-eyebrow">Larchmont · Coffee &amp; Kitchen</div>
-        <h5>Slow mornings, good coffee, walk right in.</h5>
-        <p>Fresh-roasted beans, all-day breakfast, and a corner table with your name on it.</p>
-        <span class="b-btn">See the menu →</span>
-        <div class="b-row"><div></div><div></div><div></div></div>
+      <div class="bnav">
+        <span class="bnav-brand">Maplewood Cafe</span>
+        <div class="bnav-links"><span>Menu</span><span>About</span><span>Contact</span></div>
       </div>
+      <div class="bhero">
+        <div class="bhero-text">
+          <div class="b-eyebrow">Norwalk · Coffee &amp; Kitchen</div>
+          <h5>Slow mornings, good coffee, walk right in.</h5>
+          <p>Fresh-roasted beans, all-day breakfast, and a corner table with your name on it.</p>
+          <span class="b-btn">See the menu →</span>
+        </div>
+        <div class="bhero-img" aria-hidden="true">☕</div>
+      </div>
+      <div class="b-feat-row">
+        <div class="b-feat"><span class="b-feat-ic">☕</span>Fresh roasted daily</div>
+        <div class="b-feat"><span class="b-feat-ic">🥐</span>Baked in-house</div>
+        <div class="b-feat"><span class="b-feat-ic">📍</span>Open 7am to 4pm</div>
+      </div>
+      <div class="bfoot">© Maplewood Cafe · Norwalk, CT</div>
     </div>
     <p class="offer-note">// Demo build, will be swapped for a real client site after the first job.</p>
   </div>
@@ -313,7 +333,7 @@
       <h2 style="font-size:32px;margin:14px 0 22px">Local, and easy to work with.</h2>
     </div>
     <div>
-      <p>I'm a developer based in <b>Larchmont</b> with a <b>Master's in Computer Science</b> from Sacred Heart University.</p>
+      <p>I'm a developer based in <b>Norwalk, CT</b> with a <b>Master's in Computer Science</b> from Sacred Heart University.</p>
       <p>I build the kind of site I'd want for my own business: fast, clean, and no runaround. You get a real person who picks up, explains things in plain English, and delivers on time.</p>
       <p>No agency markup. No offshore handoff. Just me, building your site.</p>
     </div>
@@ -334,7 +354,7 @@
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:10px">
-    <span>© 2026 Rushi Solanke · Larchmont, NY</span>
+    <span>© 2026 Rushi Solanke · Norwalk, CT</span>
     <span>Websites for local businesses</span>
   </div>
 </footer>
