@@ -77,6 +77,11 @@
   .tag{align-self:flex-start;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--saffron);color:var(--ink);padding:4px 10px;border-radius:100px;margin-bottom:16px}
   .tag.muted{background:var(--paper-2);color:var(--ink-soft)}
   .offer-note{margin-top:28px;font-size:14px;color:var(--ink-soft);font-family:"Space Mono",monospace}
+  .addons{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+  .addons .addons-label{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;display:block}
+  .addons ul{list-style:none}
+  .addons li{font-size:13px;color:var(--ink-soft);padding-left:16px;position:relative;margin-bottom:4px}
+  .addons li::before{content:"+";position:absolute;left:0;color:var(--saffron-deep);font-weight:700}
 
   /* case study */
   .case{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
@@ -181,21 +186,44 @@
         <h3>1-page website</h3>
         <p>A clean, mobile-first single page that tells customers who you are and how to reach you.</p>
         <div class="price">$600 <small>· 3 days</small></div>
+        <div class="addons">
+          <span class="addons-label">Add-ons available</span>
+          <ul>
+            <li>Online payment button</li>
+            <li>Booking widget</li>
+            <li>Photo gallery</li>
+          </ul>
+        </div>
       </div>
       <div class="offer">
         <span class="tag muted">Full presence</span>
         <h3>5-page website</h3>
         <p>Home, services, about, gallery, and contact. A complete site, priced under what most agencies charge.</p>
         <div class="price">$1,200 <small>· 1 week</small></div>
+        <div class="addons">
+          <span class="addons-label">Add-ons available</span>
+          <ul>
+            <li>Online payments / ordering</li>
+            <li>Menu or service catalog page</li>
+            <li>Booking / appointments widget</li>
+            <li>Reviews + photo gallery</li>
+          </ul>
+        </div>
       </div>
       <div class="offer">
         <span class="tag muted">Peace of mind</span>
         <h3>Monthly care</h3>
         <p>Updates, backups, security, and small changes, all handled. You never have to touch the code.</p>
         <div class="price">$150 <small>/ month</small></div>
+        <div class="addons">
+          <span class="addons-label">Also covers</span>
+          <ul>
+            <li>Adding or updating payments, menu, or booking anytime</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <p class="offer-note">// Fixed quotes. You know the price before I start.</p>
+    <p class="offer-note">// Fixed quotes. Add-ons priced based on what you need.</p>
   </div>
 </section>
 
