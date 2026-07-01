@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rushi Solanke - One-page handout</title>
+<meta name="description" content="A printable one-page handout for Rushi Solanke, flat-price websites for local businesses in Norwalk, CT.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23211D1A%22/><text x=%2250%22 y=%2268%22 font-family=%22Georgia,serif%22 font-size=%2258%22 fill=%22%23D98A2B%22 text-anchor=%22middle%22>R.</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F2EC; --ink:#211D1A; --ink-soft:#5C544B;
+    --saffron:#D98A2B; --saffron-deep:#B5701C; --line:#E2DBD0; --white:#FCFBF8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#E5E0D6;color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.06;letter-spacing:-.01em}
+  .mono{font-family:"Space Mono",monospace}
+  .eyebrow{font-family:"Space Mono",monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--saffron-deep)}
+
+  /* screen toolbar */
+  .toolbar{position:sticky;top:0;z-index:10;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;flex-wrap:wrap}
+  .toolbar .t-msg{font-family:"Space Mono",monospace;font-size:13px;color:rgba(245,242,236,.8)}
+  .toolbar button{font-family:"Space Mono",monospace;font-size:13px;font-weight:700;background:var(--saffron);color:var(--ink);border:none;padding:11px 20px;border-radius:100px;cursor:pointer;transition:.2s}
+  .toolbar button:hover{background:var(--saffron-deep);color:var(--white)}
+  .toolbar a{color:var(--saffron);font-family:"Space Mono",monospace;font-size:13px;text-decoration:none;border-bottom:1px solid var(--saffron)}
+
+  /* the sheet */
+  .sheet{width:8.5in;min-height:11in;margin:26px auto;background:var(--white);box-shadow:0 20px 50px -20px rgba(33,29,26,.5);padding:0.6in 0.62in;display:flex;flex-direction:column}
+  .head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;border-bottom:2px solid var(--ink);padding-bottom:16px}
+  .brand{font-family:"Fraunces",serif;font-weight:600;font-size:30px}
+  .brand span{color:var(--saffron-deep)}
+  .head .sub{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.05em;color:var(--ink-soft);margin-top:4px}
+  .head .contact{text-align:right;font-family:"Space Mono",monospace;font-size:11.5px;color:var(--ink);line-height:1.7}
+  .head .contact b{color:var(--saffron-deep)}
+
+  .tagline{margin:20px 0 6px}
+  .tagline h1{font-size:30px;max-width:20ch}
+  .tagline h1 em{font-style:italic;color:var(--saffron-deep)}
+  .tagline p{color:var(--ink-soft);font-size:13.5px;margin-top:8px;max-width:58ch}
+
+  .cols{display:grid;grid-template-columns:1.35fr 1fr;gap:26px;margin-top:20px;flex:1}
+  .col h2{font-size:17px;margin-bottom:12px}
+
+  .price-row{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed var(--line);padding:9px 0;gap:12px}
+  .price-row .name{font-size:13.5px}
+  .price-row .name b{font-weight:600}
+  .price-row .name span{display:block;color:var(--ink-soft);font-size:11.5px}
+  .price-row .amt{font-family:"Space Mono",monospace;font-weight:700;font-size:16px;white-space:nowrap}
+  .price-row .amt small{font-weight:400;font-size:11px;color:var(--ink-soft)}
+
+  .guarantee{margin-top:18px}
+  .guarantee ul{list-style:none;margin-top:8px}
+  .guarantee li{position:relative;padding-left:20px;font-size:12.5px;color:var(--ink-soft);margin-bottom:6px}
+  .guarantee li::before{content:"\2713";position:absolute;left:0;color:var(--saffron-deep);font-weight:700}
+  .guarantee li b{color:var(--ink);font-weight:600}
+
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px}
+  .stat .n{font-family:"Fraunces",serif;font-size:26px;color:var(--saffron-deep);line-height:1}
+  .stat .l{font-size:10.5px;color:var(--ink-soft);margin-top:5px}
+
+  .founding{background:var(--ink);color:var(--paper);border-radius:12px;padding:16px;margin-top:16px}
+  .founding .k{font-family:"Space Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron)}
+  .founding h3{color:var(--paper);font-size:18px;margin:5px 0}
+  .founding p{font-size:11.5px;color:rgba(245,242,236,.8)}
+
+  .qr-box{display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:16px;background:var(--paper)}
+  .qr-box img{width:96px;height:96px;flex:0 0 auto}
+  .qr-box .qr-t{font-family:"Space Mono",monospace;font-size:11.5px;color:var(--ink)}
+  .qr-box .qr-t b{color:var(--saffron-deep)}
+  .qr-box .qr-t span{display:block;color:var(--ink-soft);margin-top:4px;word-break:break-all}
+
+  .foot{margin-top:20px;border-top:2px solid var(--ink);padding-top:12px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot .cta{font-family:"Fraunces",serif;font-size:19px}
+  .foot .cta b{color:var(--saffron-deep)}
+  .foot .reach{font-family:"Space Mono",monospace;font-size:12.5px;text-align:right;line-height:1.7}
+
+  @media(max-width:900px){
+    .sheet{width:100%;min-height:0;padding:26px 20px;margin:14px auto}
+    .cols{grid-template-columns:1fr;gap:22px}
+    .head{flex-wrap:wrap}
+    .head .contact{text-align:left}
+    .tagline h1{font-size:26px}
+  }
+
+  /* PRINT: fit one page, drop the chrome */
+  @media print{
+    @page{size:letter;margin:0}
+    body{background:#fff}
+    .toolbar{display:none}
+    .sheet{width:auto;min-height:0;margin:0;box-shadow:none;padding:0.34in 0.5in}
+    a{color:inherit;text-decoration:none}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    /* compress vertical rhythm to fit a single Letter page */
+    .head{padding-bottom:9px}
+    .brand{font-size:25px}
+    .tagline{margin:9px 0 4px}
+    .tagline h1{font-size:23px}
+    .tagline p{font-size:11.5px;margin-top:4px}
+    .cols{margin-top:9px;gap:20px}
+    .col h2{font-size:15px;margin-bottom:7px}
+    .price-row{padding:5px 0}
+    .price-row .name span{font-size:10.5px}
+    .guarantee{margin-top:8px}
+    .guarantee li{margin-bottom:2px;font-size:11.5px}
+    .stats{gap:8px}
+    .stat{padding:9px}
+    .stat .n{font-size:22px}
+    .founding{margin-top:8px;padding:11px}
+    .founding h3{font-size:16px}
+    .founding p{font-size:11px}
+    .qr-box{margin-top:8px;padding:9px}
+    .qr-box img{width:78px;height:78px}
+    .foot{margin-top:9px;padding-top:8px}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="t-msg">// Print this, or "Save as PDF," and hand it to a shop owner.</span>
+  <div style="display:flex;gap:18px;align-items:center">
+    <a href="portfolio.html">← Back to site</a>
+    <button onclick="window.print()">Print / Save as PDF ↓</button>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="head">
+    <div>
+      <div class="brand">Rushi Solanke<span>.</span></div>
+      <div class="sub">Websites for local businesses · Norwalk, CT</div>
+    </div>
+    <div class="contact">
+      <b>rishisolanke.github.io</b><br>
+      (475) 988-3815<br>
+      rishisolanke57@gmail.com
+    </div>
+  </div>
+
+  <div class="tagline">
+    <h1>Websites that turn a phone tap into a <em>paying customer</em>.</h1>
+    <p>Fast, clean sites for local shops. Flat price, done in days, no agency markup, no confusing tech talk. You own everything, and you don't pay until you're happy.</p>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <h2>What you get, and what it costs</h2>
+      <div class="price-row">
+        <div class="name"><b>Website fix</b><span>Broken, slow, or wrong on phones. Often same day.</span></div>
+        <div class="amt">$200 <small>flat</small></div>
+      </div>
+      <div class="price-row">
+        <div class="name"><b>1-page website</b><span>Clean, mobile-first. Who you are, how to reach you.</span></div>
+        <div class="amt">$600 <small>· 3 days</small></div>
+      </div>
+      <div class="price-row">
+        <div class="name"><b>5-page website</b><span>Home, services, about, gallery, contact.</span></div>
+        <div class="amt">$1,200 <small>· 1 week</small></div>
+      </div>
+      <div class="price-row">
+        <div class="name"><b>Monthly care</b><span>Updates, backups, security, small changes handled.</span></div>
+        <div class="amt">$150 <small>/ mo</small></div>
+      </div>
+
+      <div class="guarantee">
+        <div class="eyebrow">// The deal, plainly</div>
+        <ul>
+          <li><b>You don't pay until it's live and you love it.</b></li>
+          <li><b>Don't like the first design?</b> I redo it, free.</li>
+          <li><b>Flat price.</b> The quote is the number, no surprises.</li>
+          <li><b>You own the site and the code.</b> No lock-in, ever.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="eyebrow">// Why it matters</div>
+      <div class="stats" style="margin-top:8px">
+        <div class="stat"><div class="n">75%</div><div class="l">judge your business by your website first</div></div>
+        <div class="stat"><div class="n">2.8x</div><div class="l">more likely to grow revenue with a site</div></div>
+        <div class="stat"><div class="n">78%</div><div class="l">of local phone searches buy within a day</div></div>
+        <div class="stat"><div class="n">62%</div><div class="l">skip a business they can't find online</div></div>
+      </div>
+
+      <div class="founding">
+        <div class="k">Founding clients</div>
+        <h3>First 3 spots: 20% off</h3>
+        <p>My first three local clients get 20% off, in exchange for an honest review once you see it working. No fake testimonials, ever.</p>
+      </div>
+
+      <div class="qr-box">
+        <img src="images/site-qr.svg" alt="QR code to rishisolanke.github.io/portfolio.html">
+        <div class="qr-t"><b>Scan to see live demos</b><span>rishisolanke.github.io/portfolio.html</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="cta">Free 5-minute site review. <b>No cost, no pressure.</b></div>
+    <div class="reach">Call or text <b>(475) 988-3815</b><br>rishisolanke57@gmail.com</div>
+  </div>
+</div>
+
+</body>
+</html>
