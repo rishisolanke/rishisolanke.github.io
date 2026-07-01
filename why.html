@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why your business needs a website - Rushi Solanke</title>
+<meta name="description" content="A plain-English case for why a local business needs a website in 2026, with the numbers, the myths, and a quick calculator for what it's worth to you.">
+<meta property="og:title" content="Why your business needs a website">
+<meta property="og:description" content="The numbers, the myths, and a quick calculator for what a website is actually worth to your local business.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rishisolanke.github.io/why.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23211D1A%22/><text x=%2250%22 y=%2268%22 font-family=%22Georgia,serif%22 font-size=%2258%22 fill=%22%23D98A2B%22 text-anchor=%22middle%22>R.</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
+<style>
+  :root{
+    --paper:#F5F2EC; --paper-2:#EFEBE2; --ink:#211D1A; --ink-soft:#5C544B;
+    --saffron:#D98A2B; --saffron-deep:#B5701C; --line:#E2DBD0; --white:#FCFBF8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  .narrow{max-width:760px}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.1;letter-spacing:-.01em}
+  .mono{font-family:"Space Mono",monospace}
+  .eyebrow{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--saffron-deep)}
+  a{color:inherit}
+  html.js .r{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  html.js .r.on{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){html.js .r{opacity:1;transform:none;transition:none}}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(245,242,236,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+  .brand{font-family:"Fraunces",serif;font-weight:600;font-size:19px;text-decoration:none}
+  .brand span{color:var(--saffron-deep)}
+  .nav-links{display:flex;gap:22px;align-items:center;font-family:"Space Mono",monospace;font-size:13px}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);transition:.2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{font-family:"Space Mono",monospace;font-size:13px;text-decoration:none;border:1px solid var(--ink);padding:9px 16px;border-radius:100px;transition:.2s;white-space:nowrap}
+  .nav-cta:hover{background:var(--ink);color:var(--paper)}
+  @media(max-width:720px){.nav-links{display:none}}
+  @media(max-width:460px){.nav-cta{font-size:11px;padding:7px 12px}.brand{font-size:16px}}
+
+  .btn{display:inline-block;text-decoration:none;font-family:"Space Mono",monospace;font-size:14px;padding:15px 26px;border-radius:100px;transition:.2s;border:1px solid var(--ink);cursor:pointer}
+  .btn-primary{background:var(--saffron);border-color:var(--saffron);color:var(--ink);font-weight:700}
+  .btn-primary:hover{background:var(--saffron-deep);border-color:var(--saffron-deep);color:var(--white)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+  .hero{padding:80px 0 64px}
+  .hero .eyebrow{margin-bottom:18px}
+  .hero h1{font-size:clamp(38px,6vw,64px);margin-bottom:22px}
+  .hero h1 em{font-style:italic;color:var(--saffron-deep)}
+  .hero .lead{font-size:20px;color:var(--ink-soft);max-width:46ch}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  .sec-head{max-width:48ch;margin-bottom:40px}
+  .sec-head h2{font-size:clamp(28px,4vw,40px);margin-top:14px}
+  .sec-head p{color:var(--ink-soft);margin-top:14px}
+
+  /* stat band */
+  .statband{background:var(--ink);color:var(--paper);border-top:none}
+  .statband .eyebrow{color:var(--saffron)}
+  .statband h2{color:var(--paper);font-size:clamp(26px,4vw,38px);max-width:24ch}
+  .statband .sub{color:rgba(245,242,236,.72);margin-top:16px;max-width:60ch}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+  @media(max-width:820px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:440px){.stat-grid{grid-template-columns:1fr}}
+  .stat{background:rgba(255,255,255,.04);border:1px solid rgba(245,242,236,.14);border-radius:16px;padding:24px}
+  .stat-num{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(36px,5vw,50px);line-height:1;color:var(--saffron)}
+  .stat-label{font-size:14px;color:rgba(245,242,236,.82);margin-top:12px}
+  .stat-src{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,242,236,.45);margin-top:14px}
+
+  /* benefit cards */
+  .benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:720px){.benefits{grid-template-columns:1fr}}
+  .benefit{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.2s}
+  .benefit:hover{border-color:var(--saffron);transform:translateY(-3px)}
+  .benefit .k{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron-deep)}
+  .benefit h3{font-size:21px;margin:10px 0 8px}
+  .benefit p{font-size:15px;color:var(--ink-soft)}
+
+  /* myths */
+  .myth{border-top:1px solid var(--line);padding:22px 0;display:grid;grid-template-columns:1fr 1.4fr;gap:20px}
+  @media(max-width:720px){.myth{grid-template-columns:1fr;gap:8px}}
+  .myth:first-of-type{border-top:none}
+  .myth .q{font-family:"Fraunces",serif;font-size:20px}
+  .myth .a{color:var(--ink-soft)}
+  .myth .a b{color:var(--ink);font-weight:600}
+
+  /* calculator */
+  .calc-wrap{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+  @media(max-width:760px){.calc-wrap{grid-template-columns:1fr;gap:28px}}
+  .calc-field-group{margin-bottom:26px}
+  .calc-field-group > label{display:block;font-size:15px;font-weight:600;margin-bottom:10px}
+  .money{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;background:var(--paper);overflow:hidden;max-width:220px}
+  .money span{padding:0 6px 0 14px;color:var(--ink-soft);font-family:"Space Mono",monospace}
+  .money input{border:none;background:transparent;font-family:"Space Mono",monospace;font-size:20px;padding:13px 14px 13px 0;width:100%;color:var(--ink)}
+  .money input:focus{outline:none}
+  .slider-row{display:flex;align-items:center;gap:16px}
+  input[type=range]{flex:1;accent-color:var(--saffron);height:6px}
+  .slider-out{font-family:"Space Mono",monospace;font-size:20px;min-width:2ch;text-align:right;color:var(--saffron-deep);font-weight:700}
+  .hint{font-size:13px;color:var(--ink-soft);margin-top:8px}
+  .calc-results{background:var(--ink);color:var(--paper);border-radius:16px;padding:30px;text-align:center}
+  .calc-results .big{font-family:"Fraunces",serif;font-size:clamp(40px,7vw,60px);color:var(--saffron);line-height:1}
+  .calc-results .big-l{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-family:"Space Mono",monospace;color:rgba(245,242,236,.6);margin-top:8px}
+  .calc-sub{display:flex;gap:14px;margin-top:26px;justify-content:center;flex-wrap:wrap}
+  .calc-sub div{flex:1 1 120px}
+  .calc-sub .n{font-family:"Fraunces",serif;font-size:24px;color:var(--paper)}
+  .calc-sub .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-family:"Space Mono",monospace;color:rgba(245,242,236,.55);margin-top:4px}
+  .calc-note{font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-soft);margin-top:22px;max-width:60ch}
+
+  .cta-band{text-align:center;padding:88px 0}
+  .cta-band h2{font-size:clamp(30px,5vw,48px);margin-bottom:14px}
+  .cta-band p{color:var(--ink-soft);max-width:46ch;margin:0 auto 30px}
+
+  footer{border-top:1px solid var(--line);padding:26px 0;font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-soft)}
+  footer a{text-decoration:none;border-bottom:1px solid var(--ink-soft)}
+  .foot-in{display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="portfolio.html">Rushi Solanke<span>.</span></a>
+    <div class="nav-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="#calculator">Calculator</a>
+      <a href="portfolio.html#offer">Pricing</a>
+    </div>
+    <a class="nav-cta" href="portfolio.html#contact">Free review</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap narrow">
+    <div class="eyebrow">A straight answer</div>
+    <h1>Do you <em>really</em> need a website?</h1>
+    <p class="lead">If people can look your business up, then yes. Here's the honest case, the numbers behind it, and a quick way to see what one is actually worth to you.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#calculator">See what it's worth to you</a>
+      <a class="btn btn-ghost" href="portfolio.html#contact">Get a free site review</a>
+    </div>
+  </div>
+</header>
+
+<section class="statband">
+  <div class="wrap">
+    <div class="r" style="max-width:26ch">
+      <div class="eyebrow">// The numbers (the industry's, not mine)</div>
+      <h2 style="margin-top:14px">This is how people actually shop for a local business now.</h2>
+      <p class="sub">Whatever you sell, your customers are looking online first. These are the numbers behind that.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat r">
+        <div class="stat-num" data-target="81" data-suffix="%">81%</div>
+        <div class="stat-label">of shoppers research a business online before they ever buy.</div>
+        <div class="stat-src">// Source: GE Capital retail</div>
+      </div>
+      <div class="stat r">
+        <div class="stat-num" data-target="46" data-suffix="%">46%</div>
+        <div class="stat-label">of all Google searches are someone looking for a local business.</div>
+        <div class="stat-src">// Source: Google</div>
+      </div>
+      <div class="stat r">
+        <div class="stat-num" data-target="88" data-suffix="%">88%</div>
+        <div class="stat-label">who search a local business on their phone visit or call within a week.</div>
+        <div class="stat-src">// Source: Nectafy / Google</div>
+      </div>
+      <div class="stat r">
+        <div class="stat-num" data-target="62" data-suffix="%">62%</div>
+        <div class="stat-label">will skip a business they can't find online at all.</div>
+        <div class="stat-src">// Source: Clutch, 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="does">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="eyebrow">What it actually does</div>
+      <h2>A website isn't a brochure. It's your hardest-working employee.</h2>
+      <p>One that works nights and weekends, never calls in sick, and answers the same three questions a hundred times a day so you don't have to.</p>
+    </div>
+    <div class="benefits">
+      <div class="benefit r">
+        <span class="k">01 / Found</span>
+        <h3>It gets you found on Google</h3>
+        <p>When someone searches your trade plus your town, you want to be the result they tap, not the competitor two doors down.</p>
+      </div>
+      <div class="benefit r">
+        <span class="k">02 / Trusted</span>
+        <h3>It makes you look legit</h3>
+        <p>People judge your whole business by how your site looks in the first half-second. A clean site says "these folks are the real deal" before you say a word.</p>
+      </div>
+      <div class="benefit r">
+        <span class="k">03 / Open 24/7</span>
+        <h3>It answers when you can't</h3>
+        <p>Hours, menu, prices, directions, booking. The stuff people call to ask is right there, at 11pm, while you're asleep.</p>
+      </div>
+      <div class="benefit r">
+        <span class="k">04 / Yours</span>
+        <h3>You actually own it</h3>
+        <p>Unlike a social page you rent from an algorithm, your site is yours. It doesn't vanish when a platform changes the rules.</p>
+      </div>
+      <div class="benefit r">
+        <span class="k">05 / Converts</span>
+        <h3>It turns a search into a customer</h3>
+        <p>A tap to call, a booking button, directions to your door. It closes the gap between "found you" and "walked in."</p>
+      </div>
+      <div class="benefit r">
+        <span class="k">06 / Level</span>
+        <h3>It levels the playing field</h3>
+        <p>A sharp one-page site can make a two-person shop look every bit as sharp as the chain down the road. Often sharper.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="myths">
+  <div class="wrap narrow">
+    <div class="sec-head r">
+      <div class="eyebrow">"But..."</div>
+      <h2>The four things people say to talk themselves out of it.</h2>
+    </div>
+    <div class="r">
+      <div class="myth">
+        <div class="q">"I already have a Facebook / Instagram."</div>
+        <div class="a">Good, keep it. But you don't own it, and 84% of people trust an actual website more than a social page alone. Social is where people find you. A site is where they decide to trust you and <b>where Google actually ranks you</b>.</div>
+      </div>
+      <div class="myth">
+        <div class="q">"My business runs on word of mouth."</div>
+        <div class="a">And the first thing that new referral does is look you up. Word of mouth gets your name in their head; <b>your website is what they see when they check you out</b>. No site, and the trail goes cold.</div>
+      </div>
+      <div class="myth">
+        <div class="q">"I'm too small to need one."</div>
+        <div class="a">Small is exactly who this helps most. A simple site is often <b>the cheapest customer you'll ever buy</b>, and it makes a small shop look established and safe to try.</div>
+      </div>
+      <div class="myth">
+        <div class="q">"Websites are expensive."</div>
+        <div class="a">Agencies charge thousands, sure. I don't. A clean one-page site is $600 flat, and the calculator below shows how fast a handful of extra customers pays that back. <b>It's usually weeks, not months.</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calculator">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="eyebrow">// The math, your numbers</div>
+      <h2>What's a customer actually worth to you?</h2>
+      <p>Drag the slider. See what even a few extra customers a week from being findable online would add up to, and how quickly a site pays for itself.</p>
+    </div>
+    <div class="calc-wrap r">
+      <div>
+        <div class="calc-field-group">
+          <label for="avgSale">Your average sale</label>
+          <div class="money"><span>$</span><input id="avgSale" type="number" min="1" max="100000" value="30" inputmode="numeric"></div>
+          <div class="hint">Roughly what a customer spends with you in one visit.</div>
+        </div>
+        <div class="calc-field-group">
+          <label for="extra">New customers a week a website could bring you</label>
+          <div class="slider-row">
+            <input id="extra" type="range" min="1" max="25" value="5">
+            <span class="slider-out" id="extraOut">5</span>
+          </div>
+          <div class="hint">Kept deliberately modest. Local search alone drives real foot traffic.</div>
+        </div>
+      </div>
+      <div class="calc-results" aria-live="polite">
+        <div class="big" id="perYear">$46,800</div>
+        <div class="big-l">extra per year</div>
+        <div class="calc-sub">
+          <div><div class="n" id="perMonth">$3,900</div><div class="l">extra / month</div></div>
+          <div><div class="n" id="payback">1 week</div><div class="l">to pay off a $600 site</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="calc-note">// These are your numbers, not a promise. But even a conservative guess shows the point: a website isn't a cost, it's one of the cheapest customers you'll ever buy.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="r">
+      <div class="eyebrow">Ready when you are</div>
+      <h2>Let's get you online, honestly.</h2>
+      <p>Flat price, done in days, and you don't pay until you're happy. Start with a free 5-minute review of where you're at.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-primary" href="portfolio.html#contact">Get my free website review</a>
+        <a class="btn btn-ghost" href="portfolio.html">See the work and pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>© 2026 Rushi Solanke · Norwalk, CT</span>
+    <span><a href="portfolio.html">Portfolio</a> · <a href="index.html">Main site</a> · <a href="onepager.html">One-pager</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll reveals
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+    }, { threshold: .08, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.r').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.r').forEach(function(el){ el.classList.add('on'); });
+  }
+
+  // Stat count-up
+  function animateCount(el){
+    var target = parseFloat(el.dataset.target), dec = parseInt(el.dataset.decimals||'0',10), suffix = el.dataset.suffix||'';
+    if (isNaN(target)) return;
+    var dur = 1100, start = null;
+    function tick(now){
+      if (start===null) start = now;
+      var p = Math.min(1,(now-start)/dur), eased = 1-Math.pow(1-p,3);
+      el.textContent = (target*eased).toFixed(dec)+suffix;
+      if (p<1) requestAnimationFrame(tick); else el.textContent = target.toFixed(dec)+suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+  if (!reduce && 'IntersectionObserver' in window) {
+    var cObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ animateCount(e.target); cObs.unobserve(e.target); } });
+    }, { threshold:.5 });
+    document.querySelectorAll('.stat-num[data-target]').forEach(function(n){ cObs.observe(n); });
+  }
+
+  // ROI calculator
+  var SITE_PRICE = 600;
+  var avgSale = document.getElementById('avgSale');
+  var extra = document.getElementById('extra');
+  var extraOut = document.getElementById('extraOut');
+  var perYear = document.getElementById('perYear');
+  var perMonth = document.getElementById('perMonth');
+  var payback = document.getElementById('payback');
+  function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function recalc(){
+    var sale = Math.max(0, parseFloat(avgSale.value) || 0);
+    var per = parseInt(extra.value, 10);
+    extraOut.textContent = per;
+    var perWeek = sale * per;
+    perYear.textContent = money(perWeek * 52);
+    perMonth.textContent = money(perWeek * 52 / 12);
+    if (perWeek <= 0) { payback.textContent = 'n/a'; }
+    else {
+      var weeks = SITE_PRICE / perWeek;
+      if (weeks < 1) payback.textContent = 'under a week';
+      else { var w = Math.ceil(weeks); payback.textContent = w + (w === 1 ? ' week' : ' weeks'); }
+    }
+  }
+  if (avgSale && extra) {
+    avgSale.addEventListener('input', recalc);
+    extra.addEventListener('input', recalc);
+    recalc();
+  }
+
+  // Smooth scroll for same-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var t = document.querySelector(a.getAttribute('href'));
+      if (t){ e.preventDefault(); t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
