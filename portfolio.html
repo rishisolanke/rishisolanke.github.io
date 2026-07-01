@@ -19,15 +19,9 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   "name": "Rushi Solanke",
   "description": "Flat-price websites for local businesses in Norwalk, CT. Fixes, 1-page and 5-page builds, and monthly care.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Norwalk",
-    "addressRegion": "CT",
-    "addressCountry": "US"
-  },
   "telephone": "+14759883815",
   "email": "rishisolanke57@gmail.com",
   "url": "https://rishisolanke.github.io/portfolio.html",
@@ -58,9 +52,9 @@
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{font-family:"Fraunces",serif;font-weight:600;font-size:19px}
   .brand span{color:var(--saffron-deep)}
-  .nav-cta{font-family:"Space Mono",monospace;font-size:13px;text-decoration:none;border:1px solid var(--ink);padding:9px 16px;border-radius:100px;transition:.2s}
+  .nav-cta{font-family:"Space Mono",monospace;font-size:13px;text-decoration:none;border:1px solid var(--ink);padding:9px 16px;border-radius:100px;transition:.2s;white-space:nowrap}
   .nav-cta:hover{background:var(--ink);color:var(--paper)}
-  @media(max-width:620px){.nav-cta{display:none}}
+  @media(max-width:460px){.nav-cta{font-size:11px;padding:7px 12px}.brand{font-size:16px}}
 
   /* hero */
   .hero{position:relative;padding:88px 0 76px;overflow:hidden}
@@ -151,10 +145,10 @@
   .bnav-links{display:flex;gap:14px;flex-wrap:wrap;font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft)}
   .bhero{display:flex;gap:24px;align-items:center;padding:36px 34px 20px;flex-wrap:wrap}
   .bhero-text{flex:1 1 220px}
-  .bhero-img{flex:1 1 160px;min-height:120px;border-radius:10px;background:linear-gradient(135deg,#C98A46,#8B5A2B);display:flex;align-items:center;justify-content:center;font-size:34px}
+  .bhero-img{flex:1 1 160px;min-height:120px;border-radius:10px;background:linear-gradient(135deg,#C98A46,#8B5A2B);display:flex;align-items:center;justify-content:center;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75)}
   .b-feat-row{display:flex;gap:12px;padding:0 34px 30px;flex-wrap:wrap}
   .b-feat{flex:1 1 120px;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center;font-size:12px;color:var(--ink-soft)}
-  .b-feat-ic{display:block;font-size:20px;margin-bottom:6px}
+  .b-feat-ic{display:block;width:6px;height:6px;margin:0 auto 10px;border-radius:50%;background:var(--saffron)}
   .bfoot{padding:14px 34px;background:var(--paper-2);border-top:1px solid var(--line);font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft);text-align:center}
 
   /* founding clients */
@@ -199,7 +193,7 @@
 <nav>
   <div class="wrap nav-in">
     <div class="brand">Rushi Solanke<span>.</span></div>
-    <a class="nav-cta" href="#contact">Get a free review</a>
+    <a class="nav-cta" href="#contact">Free review</a>
   </div>
 </nav>
 
@@ -354,12 +348,12 @@
           <p>Fresh-roasted beans, all-day breakfast, and a corner table with your name on it.</p>
           <span class="b-btn">See the menu →</span>
         </div>
-        <div class="bhero-img" aria-hidden="true">☕</div>
+        <div class="bhero-img" aria-hidden="true">Photo</div>
       </div>
       <div class="b-feat-row">
-        <div class="b-feat"><span class="b-feat-ic">☕</span>Fresh roasted daily</div>
-        <div class="b-feat"><span class="b-feat-ic">🥐</span>Baked in-house</div>
-        <div class="b-feat"><span class="b-feat-ic">📍</span>Open 7am to 4pm</div>
+        <div class="b-feat"><span class="b-feat-ic"></span>Fresh roasted daily</div>
+        <div class="b-feat"><span class="b-feat-ic"></span>Baked in-house</div>
+        <div class="b-feat"><span class="b-feat-ic"></span>Open 7am to 4pm</div>
       </div>
       <div class="bfoot">© Maplewood Cafe · Norwalk, CT</div>
     </div>
@@ -394,7 +388,7 @@
       </div>
       <div class="faq-item">
         <h3>Who pays for hosting?</h3>
-        <p>For simple sites, hosting is often free or a few dollars a year for a domain name. I'll walk you through the exact cost before we start, no surprises.</p>
+        <p>Hosting itself is usually free. The only real cost is a domain name, typically $12 to $15 a year, paid directly to the registrar, not to me.</p>
       </div>
       <div class="faq-item">
         <h3>What if I need changes after launch?</h3>
@@ -415,8 +409,8 @@
       <h2 style="font-size:32px;margin:14px 0 22px">Local, and easy to work with.</h2>
     </div>
     <div>
-      <p>I'm a developer based in <b>Norwalk, CT</b> with a <b>Master's in Computer Science</b> from Sacred Heart University.</p>
       <p>I build the kind of site I'd want for my own business: fast, clean, and no runaround. You get a real person who picks up, explains things in plain English, and delivers on time.</p>
+      <p>I'm a developer based in <b>Norwalk, CT</b> with a <b>Master's in Computer Science</b> from Sacred Heart University.</p>
       <p>No agency markup. No offshore handoff. Just me, building your site.</p>
       <a class="about-link" href="https://github.com/rishisolanke" target="_blank" rel="noopener">See my code on GitHub →</a>
     </div>
@@ -429,10 +423,13 @@
     <h2>Get a free 5-minute site review.</h2>
     <p>I'll take a look at your current site and tell you exactly what I'd improve. No cost, no pressure.</p>
     <!--
-      Contact form backend: sign up free at https://formspree.io, create a form,
-      then replace YOUR_FORM_ID below with your real form ID from the Formspree dashboard.
+      Contact form backend: FormSubmit.co, no signup needed. Submissions go straight
+      to rishisolanke57@gmail.com. The first real submission triggers a one-time
+      confirmation email from FormSubmit, click it once to activate delivery.
     -->
-    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form class="contact-form" action="https://formsubmit.co/rishisolanke57@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New site inquiry from portfolio.html">
+      <input type="hidden" name="_template" value="table">
       <input type="email" name="email" placeholder="Your email" required>
       <textarea name="message" placeholder="Tell me about your site" rows="3" required></textarea>
       <button type="submit" class="btn btn-primary">Send →</button>
