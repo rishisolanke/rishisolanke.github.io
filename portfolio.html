@@ -4,9 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rushi Solanke - Websites for local businesses</title>
+<meta name="description" content="Flat-price websites for local businesses in Norwalk, CT. Fixes, 1-page and 5-page builds, and monthly care, done in days, no agency markup.">
+<meta property="og:title" content="Rushi Solanke - Websites for local businesses">
+<meta property="og:description" content="Flat-price websites for local businesses in Norwalk, CT. Fixes, 1-page and 5-page builds, and monthly care, done in days, no agency markup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rishisolanke.github.io/portfolio.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rushi Solanke - Websites for local businesses">
+<meta name="twitter:description" content="Flat-price websites for local businesses in Norwalk, CT. Fixes, 1-page and 5-page builds, and monthly care, done in days, no agency markup.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23211D1A%22/><text x=%2250%22 y=%2268%22 font-family=%22Georgia,serif%22 font-size=%2258%22 fill=%22%23D98A2B%22 text-anchor=%22middle%22>R.</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Rushi Solanke",
+  "description": "Flat-price websites for local businesses in Norwalk, CT. Fixes, 1-page and 5-page builds, and monthly care.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Norwalk",
+    "addressRegion": "CT",
+    "addressCountry": "US"
+  },
+  "telephone": "+14759883815",
+  "email": "rishisolanke57@gmail.com",
+  "url": "https://rishisolanke.github.io/portfolio.html",
+  "areaServed": "Norwalk, CT and Fairfield County",
+  "priceRange": "$150-$1200"
+}
+</script>
 <style>
   :root{
     --paper:#F5F2EC; --paper-2:#EFEBE2; --ink:#211D1A; --ink-soft:#5C544B;
@@ -129,6 +157,17 @@
   .b-feat-ic{display:block;font-size:20px;margin-bottom:6px}
   .bfoot{padding:14px 34px;background:var(--paper-2);border-top:1px solid var(--line);font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft);text-align:center}
 
+  /* founding clients */
+  .founding{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px}
+  .founding h2{font-size:26px;margin:10px 0 12px}
+  .founding p{color:var(--ink-soft);max-width:60ch}
+
+  /* faq */
+  .faq{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px}
+  @media(max-width:720px){.faq{grid-template-columns:1fr}}
+  .faq-item h3{font-size:17px;margin-bottom:6px}
+  .faq-item p{font-size:15px;color:var(--ink-soft)}
+
   /* steps */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   @media(max-width:720px){.steps{grid-template-columns:1fr}}
@@ -146,6 +185,12 @@
   .contact h2{font-size:clamp(32px,5vw,52px);margin:16px 0 12px}
   .contact p{color:var(--ink-soft);max-width:40ch;margin:0 auto 32px}
   .contact .btn{font-size:15px}
+  .contact-form{max-width:420px;margin:0 auto;display:flex;flex-direction:column;gap:12px;text-align:left}
+  .contact-form input,.contact-form textarea{font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:15px;padding:13px 16px;border-radius:10px;border:1px solid var(--line);background:var(--white);color:var(--ink);resize:vertical}
+  .contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--saffron);outline-offset:1px}
+  .contact-form button{align-self:flex-start;font:inherit;cursor:pointer}
+  .contact-alt{margin-top:18px;font-size:14px;color:var(--ink-soft)}
+  .about-link{display:inline-block;margin-top:6px;font-family:"Space Mono",monospace;font-size:13px;text-decoration:none;border-bottom:1px solid var(--ink)}
   footer{border-top:1px solid var(--line);padding:26px 0;font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </style>
 </head>
@@ -280,6 +325,16 @@
   </div>
 </section>
 
+<section id="founding">
+  <div class="wrap">
+    <div class="founding">
+      <div class="eyebrow">Founding clients</div>
+      <h2>Looking for my first 3 local clients.</h2>
+      <p>I'm just getting started taking on local businesses, so the first 3 who sign on get a discounted rate in exchange for a short testimonial and permission to feature the finished site here. No fake reviews, no stock quotes. Just an honest trade while I build up a track record in Norwalk.</p>
+    </div>
+  </div>
+</section>
+
 <section id="sample">
   <div class="wrap">
     <div class="sec-head">
@@ -326,6 +381,33 @@
   </div>
 </section>
 
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Questions</div>
+      <h2>A few things people usually ask.</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>Do I own my website?</h3>
+        <p>Yes, completely. The code and domain are yours. No lock-in, no monthly fee required to keep it running.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Who pays for hosting?</h3>
+        <p>For simple sites, hosting is often free or a few dollars a year for a domain name. I'll walk you through the exact cost before we start, no surprises.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if I need changes after launch?</h3>
+        <p>Small tweaks can be one-off requests, or you can add monthly care and I'll handle updates as they come up.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How fast can we start?</h3>
+        <p>Usually within a day or two of our first call. Builds take days, not weeks, once we agree on scope.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="about">
   <div class="wrap about">
     <div>
@@ -336,6 +418,7 @@
       <p>I'm a developer based in <b>Norwalk, CT</b> with a <b>Master's in Computer Science</b> from Sacred Heart University.</p>
       <p>I build the kind of site I'd want for my own business: fast, clean, and no runaround. You get a real person who picks up, explains things in plain English, and delivers on time.</p>
       <p>No agency markup. No offshore handoff. Just me, building your site.</p>
+      <a class="about-link" href="https://github.com/rishisolanke" target="_blank" rel="noopener">See my code on GitHub →</a>
     </div>
   </div>
 </section>
@@ -345,10 +428,16 @@
     <div class="eyebrow">Let's talk</div>
     <h2>Get a free 5-minute site review.</h2>
     <p>I'll take a look at your current site and tell you exactly what I'd improve. No cost, no pressure.</p>
-    <div class="cta-row" style="justify-content:center">
-      <a class="btn btn-primary" href="mailto:rishisolanke57@gmail.com">rishisolanke57@gmail.com →</a>
-      <a class="btn btn-ghost" href="tel:+14759883815">(475) 988-3815</a>
-    </div>
+    <!--
+      Contact form backend: sign up free at https://formspree.io, create a form,
+      then replace YOUR_FORM_ID below with your real form ID from the Formspree dashboard.
+    -->
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" placeholder="Tell me about your site" rows="3" required></textarea>
+      <button type="submit" class="btn btn-primary">Send →</button>
+    </form>
+    <p class="contact-alt">Prefer to call or email directly? <a href="mailto:rishisolanke57@gmail.com">rishisolanke57@gmail.com</a> · <a href="tel:+14759883815">(475) 988-3815</a></p>
   </div>
 </section>
 
