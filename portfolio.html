@@ -4,18 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rushi Solanke - Websites for local businesses</title>
-<meta name="description" content="Flat-price websites for local businesses in Norwalk, CT. Fixes, 1-page and 5-page builds, and monthly care, done in days, no agency markup.">
+<meta name="description" content="Flat-price websites for local businesses in Norwalk, CT. Cafes, restaurants, trades, and salons. Fixes, 1-page and 5-page builds, done in days, no agency markup.">
 <meta property="og:title" content="Rushi Solanke - Websites for local businesses">
-<meta property="og:description" content="Flat-price websites for local businesses in Norwalk, CT. Fixes, 1-page and 5-page builds, and monthly care, done in days, no agency markup.">
+<meta property="og:description" content="Flat-price websites for local businesses in Norwalk, CT. Cafes, restaurants, trades, and salons. Done in days, you own everything, no agency markup.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rishisolanke.github.io/portfolio.html">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rushi Solanke - Websites for local businesses">
-<meta name="twitter:description" content="Flat-price websites for local businesses in Norwalk, CT. Fixes, 1-page and 5-page builds, and monthly care, done in days, no agency markup.">
+<meta name="twitter:description" content="Flat-price websites for local businesses in Norwalk, CT. Done in days, you own everything, no agency markup.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23211D1A%22/><text x=%2250%22 y=%2268%22 font-family=%22Georgia,serif%22 font-size=%2258%22 fill=%22%23D98A2B%22 text-anchor=%22middle%22>R.</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -47,13 +48,22 @@
   .eyebrow{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--saffron-deep)}
   a{color:inherit}
 
+  /* scroll reveal (only active when JS is on, so no-JS shows everything) */
+  html.js .r{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  html.js .r.on{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){html.js .r{opacity:1;transform:none;transition:none}}
+
   /* nav */
   nav{position:sticky;top:0;z-index:50;background:rgba(245,242,236,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
   .brand{font-family:"Fraunces",serif;font-weight:600;font-size:19px}
   .brand span{color:var(--saffron-deep)}
+  .nav-links{display:flex;gap:22px;align-items:center;font-family:"Space Mono",monospace;font-size:13px}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);transition:.2s}
+  .nav-links a:hover{color:var(--ink)}
   .nav-cta{font-family:"Space Mono",monospace;font-size:13px;text-decoration:none;border:1px solid var(--ink);padding:9px 16px;border-radius:100px;transition:.2s;white-space:nowrap}
   .nav-cta:hover{background:var(--ink);color:var(--paper)}
+  @media(max-width:720px){.nav-links{display:none}}
   @media(max-width:460px){.nav-cta{font-size:11px;padding:7px 12px}.brand{font-size:16px}}
 
   /* hero */
@@ -64,12 +74,14 @@
   .hero h1 em{font-style:italic;color:var(--saffron-deep)}
   .lead{font-size:20px;color:var(--ink-soft);max-width:30ch}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-  .btn{display:inline-block;text-decoration:none;font-family:"Space Mono",monospace;font-size:14px;padding:15px 26px;border-radius:100px;transition:.2s;border:1px solid var(--ink)}
+  .btn{display:inline-block;text-decoration:none;font-family:"Space Mono",monospace;font-size:14px;padding:15px 26px;border-radius:100px;transition:.2s;border:1px solid var(--ink);cursor:pointer}
   .btn-primary{background:var(--saffron);border-color:var(--saffron);color:var(--ink);font-weight:700}
   .btn-primary:hover{background:var(--saffron-deep);border-color:var(--saffron-deep);color:var(--white)}
   .btn-ghost:hover{background:var(--ink);color:var(--paper)}
   .trust{margin-top:26px;font-size:14px;color:var(--ink-soft)}
   .trust b{color:var(--ink);font-weight:600}
+  .trust-strip{margin-top:20px;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+  .trust-strip span{color:var(--saffron-deep)}
 
   /* breathing orb */
   .orb-holder{display:flex;justify-content:center;align-items:center;min-height:240px}
@@ -85,8 +97,28 @@
   section{padding:72px 0;border-top:1px solid var(--line)}
   .sec-head{max-width:44ch;margin-bottom:44px}
   .sec-head h2{font-size:clamp(30px,4vw,42px);margin:14px 0 0}
+  .sec-head p{color:var(--ink-soft);margin-top:14px}
+
+  /* stat band (the one deliberate dark inversion) */
+  .statband{background:var(--ink);color:var(--paper);border-top:none}
+  .statband .eyebrow{color:var(--saffron)}
+  .statband h2{color:var(--paper);font-size:clamp(28px,4vw,42px);margin:14px 0 0;max-width:24ch}
+  .statband .stat-sub{color:rgba(245,242,236,.72);margin-top:16px;max-width:60ch}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+  @media(max-width:820px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:440px){.stat-grid{grid-template-columns:1fr}}
+  .stat{background:rgba(255,255,255,.04);border:1px solid rgba(245,242,236,.14);border-radius:16px;padding:24px}
+  .stat-num{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(38px,5vw,52px);line-height:1;color:var(--saffron)}
+  .stat-label{font-size:14px;color:rgba(245,242,236,.82);margin-top:12px}
+  .stat-src{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,242,236,.45);margin-top:14px}
+
+  /* stakes */
+  .stakes h2{font-size:clamp(28px,4.4vw,44px);max-width:18ch}
+  .stakes p{color:var(--ink-soft);max-width:62ch;margin-top:20px;font-size:19px}
+  .stakes .btn{margin-top:28px}
 
   /* offer cards */
+  .anchor-line{font-family:"Space Mono",monospace;font-size:13px;color:var(--ink-soft);margin-bottom:22px;max-width:72ch;line-height:1.7}
   .offers{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   @media(max-width:720px){.offers{grid-template-columns:1fr}}
   .offer{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;transition:.2s}
@@ -130,31 +162,61 @@
   .p-stats .pn{font-family:"Fraunces",serif;font-size:20px}
   .p-stats .pl{font-size:10px;color:rgba(245,242,236,.5);letter-spacing:.08em;text-transform:uppercase}
 
+  /* demo gallery + CSS-only tabs */
+  .demo-switcher{position:relative}
+  .demo-switcher > input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0)}
+  .demo-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+  .demo-tabs label{cursor:pointer;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.06em;padding:9px 16px;border-radius:100px;border:1px solid var(--line);background:var(--white);color:var(--ink-soft);transition:.2s;user-select:none}
+  .demo-tabs label:hover{border-color:var(--saffron)}
+  .demo-panel{display:none}
+  #tab-cafe:checked ~ #panel-cafe,
+  #tab-rest:checked ~ #panel-rest,
+  #tab-trade:checked ~ #panel-trade,
+  #tab-salon:checked ~ #panel-salon{display:block}
+  #tab-cafe:checked ~ .demo-tabs label[for="tab-cafe"],
+  #tab-rest:checked ~ .demo-tabs label[for="tab-rest"],
+  #tab-trade:checked ~ .demo-tabs label[for="tab-trade"],
+  #tab-salon:checked ~ .demo-tabs label[for="tab-salon"]{background:var(--saffron);color:var(--ink);border-color:var(--saffron);font-weight:700}
+  .demo-switcher > input:focus-visible ~ .demo-tabs label[for="tab-cafe"],
+  .demo-switcher > input:focus-visible ~ .demo-tabs label[for="tab-rest"],
+  .demo-switcher > input:focus-visible ~ .demo-tabs label[for="tab-trade"],
+  .demo-switcher > input:focus-visible ~ .demo-tabs label[for="tab-salon"]{outline:2px solid var(--saffron-deep);outline-offset:2px}
+
   /* sample browser mockup */
   .browser{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--white)}
   .bbar{display:flex;align-items:center;gap:7px;padding:12px 14px;background:var(--paper-2);border-bottom:1px solid var(--line)}
   .bbar i{width:11px;height:11px;border-radius:50%;background:#D6CEC1;display:block}
   .burl{margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft)}
-  .bsite{padding:40px 34px 44px;background:linear-gradient(180deg,#FBF7EF,#F5EFE4)}
   .bsite .b-eyebrow{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--saffron-deep)}
   .bsite h5{font-family:"Fraunces",serif;font-weight:500;font-size:30px;margin:10px 0 8px;max-width:16ch}
   .bsite p{font-size:14px;color:var(--ink-soft);max-width:34ch}
-  .bsite .b-btn{display:inline-block;margin-top:18px;font-family:"Space Mono",monospace;font-size:12px;background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:100px}
+  .b-btn{display:inline-block;margin-top:18px;font-family:"Space Mono",monospace;font-size:12px;background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:100px}
   .bnav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 14px;padding:14px 34px;background:var(--white);border-bottom:1px solid var(--line)}
   .bnav-brand{font-family:"Fraunces",serif;font-weight:600;font-size:15px;color:var(--ink)}
   .bnav-links{display:flex;gap:14px;flex-wrap:wrap;font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft)}
   .bhero{display:flex;gap:24px;align-items:center;padding:36px 34px 20px;flex-wrap:wrap}
   .bhero-text{flex:1 1 220px}
   .bhero-img{flex:1 1 160px;min-height:120px;height:120px;width:100%;border-radius:10px;object-fit:cover;display:block}
+  .bhero-block{flex:1 1 160px;min-height:120px;height:120px;border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.82)}
+  .grad-rest{background:linear-gradient(135deg,#7C3B2E,#B5652F)}
+  .grad-trade{background:linear-gradient(135deg,#33475B,#5A7891)}
+  .grad-salon{background:linear-gradient(135deg,#5B3A52,#9A6B86)}
   .b-feat-row{display:flex;gap:12px;padding:0 34px 30px;flex-wrap:wrap}
   .b-feat{flex:1 1 120px;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center;font-size:12px;color:var(--ink-soft)}
   .b-feat-ic{display:block;width:6px;height:6px;margin:0 auto 10px;border-radius:50%;background:var(--saffron)}
+  .b-about{display:flex;gap:16px;align-items:center;padding:0 34px 30px;flex-wrap:wrap}
+  .b-about img{width:150px;height:96px;object-fit:cover;border-radius:8px;flex:0 0 auto}
+  .b-about p{font-size:13px;color:var(--ink-soft);flex:1 1 200px;max-width:none}
   .bfoot{padding:14px 34px;background:var(--paper-2);border-top:1px solid var(--line);font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft);text-align:center}
 
-  /* founding clients */
-  .founding{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px}
-  .founding h2{font-size:26px;margin:10px 0 12px}
-  .founding p{color:var(--ink-soft);max-width:60ch}
+  /* founding + guarantee callout boxes */
+  .callout{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px}
+  .callout h2{font-size:26px;margin:10px 0 12px}
+  .callout p{color:var(--ink-soft);max-width:60ch}
+  .guarantee-list{list-style:none;display:grid;gap:14px;margin-top:6px}
+  .guarantee-list li{padding-left:28px;position:relative;color:var(--ink-soft)}
+  .guarantee-list li::before{content:"\2713";position:absolute;left:0;color:var(--saffron-deep);font-weight:700}
+  .guarantee-list li b{color:var(--ink);font-weight:600}
 
   /* faq */
   .faq{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px}
@@ -182,10 +244,12 @@
   .contact-form{max-width:420px;margin:0 auto;display:flex;flex-direction:column;gap:12px;text-align:left}
   .contact-form input,.contact-form textarea{font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:15px;padding:13px 16px;border-radius:10px;border:1px solid var(--line);background:var(--white);color:var(--ink);resize:vertical}
   .contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--saffron);outline-offset:1px}
-  .contact-form button{align-self:flex-start;font:inherit;cursor:pointer}
-  .contact-alt{margin-top:18px;font-size:14px;color:var(--ink-soft)}
+  .contact-form button{align-self:flex-start;font:inherit}
+  .contact-micro{margin-top:18px;font-size:13px;color:var(--ink-soft)}
+  .contact-alt{margin-top:10px;font-size:14px;color:var(--ink-soft)}
   .about-link{display:inline-block;margin-top:6px;font-family:"Space Mono",monospace;font-size:13px;text-decoration:none;border-bottom:1px solid var(--ink)}
-  footer{border-top:1px solid var(--line);padding:26px 0;font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer{border-top:1px solid var(--line);padding:26px 0;font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-soft)}
+  footer a{text-decoration:none;border-bottom:1px solid var(--ink-soft)}
 </style>
 </head>
 <body>
@@ -193,6 +257,12 @@
 <nav>
   <div class="wrap nav-in">
     <div class="brand">Rushi Solanke<span>.</span></div>
+    <div class="nav-links">
+      <a href="#why">Why</a>
+      <a href="#work">Work</a>
+      <a href="#offer">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
     <a class="nav-cta" href="#contact">Free review</a>
   </div>
 </nav>
@@ -204,10 +274,10 @@
       <h1>Websites that turn a phone tap into a <em>paying customer</em>.</h1>
       <p class="lead">I build fast, clean sites for local businesses. Flat price, done in days, no confusing tech talk.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#contact">Get a free 5-min site review</a>
-        <a class="btn btn-ghost" href="#offer">See pricing</a>
+        <a class="btn btn-primary" href="#contact">Get my free website review</a>
+        <a class="btn btn-ghost" href="#work">See what I'd build for you</a>
       </div>
-      <p class="trust">Built a full <b>meditation companion app</b> from scratch · M.S. Computer Science</p>
+      <p class="trust-strip"><span>Norwalk, CT</span> · flat pricing · you own everything · usually a reply the same day</p>
     </div>
     <div class="orb-holder">
       <div class="orb" aria-hidden="true"><div class="orb-dot"></div></div>
@@ -215,20 +285,236 @@
   </div>
 </header>
 
+<section id="why" class="statband">
+  <div class="wrap">
+    <div class="sec-head r" style="max-width:none;margin-bottom:0">
+      <div class="eyebrow">// The numbers (not mine, the industry's)</div>
+      <h2>Your website is the first thing people trust, before they ever call.</h2>
+      <p class="stat-sub">I'm just starting out, so I can't show you my own client stats yet. But here's what the research says about why a real website matters for a shop like yours.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat r">
+        <div class="stat-num" data-target="75" data-suffix="%">75%</div>
+        <div class="stat-label">of people judge your business by your website before they judge your product.</div>
+        <div class="stat-src">// Source: Stanford</div>
+      </div>
+      <div class="stat r">
+        <div class="stat-num" data-target="2.8" data-decimals="1" data-suffix="x">2.8x</div>
+        <div class="stat-label">more likely to grow revenue than a business with no website at all.</div>
+        <div class="stat-src">// Source: Google + Deloitte</div>
+      </div>
+      <div class="stat r">
+        <div class="stat-num" data-target="78" data-suffix="%">78%</div>
+        <div class="stat-label">of local phone searches lead to a purchase within a single day.</div>
+        <div class="stat-src">// Source: Google</div>
+      </div>
+      <div class="stat r">
+        <div class="stat-num" data-target="62" data-suffix="%">62%</div>
+        <div class="stat-label">of people will skip a business they can't find online.</div>
+        <div class="stat-src">// Source: Clutch, 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stakes" class="stakes">
+  <div class="wrap">
+    <div class="r">
+      <div class="eyebrow">// The real problem</div>
+      <h2 style="margin-top:14px">If they can't find you online, they find the shop next door.</h2>
+      <p>There are over a billion "near me" searches every month, and most of them happen on a phone, on the spot. Nearly half of all Google searches are someone looking for a local business right now. If you don't show up with a site that looks the part, the next result does, and that customer was yours to lose.</p>
+      <a class="btn btn-primary" href="#work">See what I'd build for you</a>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="eyebrow">// Demo builds, made these to show what I can do</div>
+      <h2>No clients to show yet. So I built these instead.</h2>
+      <p>Pick your kind of business. This is roughly what I'd make for you. The real one gets your name, your photos, and your hours.</p>
+    </div>
+    <div class="demo-switcher r">
+      <input type="radio" name="demo" id="tab-cafe" checked>
+      <input type="radio" name="demo" id="tab-rest">
+      <input type="radio" name="demo" id="tab-trade">
+      <input type="radio" name="demo" id="tab-salon">
+      <div class="demo-tabs" role="tablist">
+        <label for="tab-cafe">Cafe</label>
+        <label for="tab-rest">Restaurant</label>
+        <label for="tab-trade">Trades</label>
+        <label for="tab-salon">Salon</label>
+      </div>
+
+      <!-- Cafe -->
+      <div class="demo-panel" id="panel-cafe">
+        <div class="browser">
+          <div class="bbar"><i></i><i></i><i></i><span class="burl">maplewoodcafe.com</span></div>
+          <div class="bnav">
+            <span class="bnav-brand">Maplewood Cafe</span>
+            <div class="bnav-links"><span>Menu</span><span>About</span><span>Contact</span></div>
+          </div>
+          <div class="bhero bsite">
+            <div class="bhero-text">
+              <div class="b-eyebrow">Norwalk · Coffee &amp; Kitchen</div>
+              <h5>Slow mornings, good coffee, walk right in.</h5>
+              <p>Fresh-roasted beans, all-day breakfast, and a corner table with your name on it.</p>
+              <span class="b-btn">See the menu →</span>
+            </div>
+            <img class="bhero-img" src="images/barista-hero.jpg" alt="Barista smiling while preparing an espresso at the counter" loading="lazy">
+          </div>
+          <div class="b-feat-row">
+            <div class="b-feat"><span class="b-feat-ic"></span>Fresh roasted daily</div>
+            <div class="b-feat"><span class="b-feat-ic"></span>Baked in-house</div>
+            <div class="b-feat"><span class="b-feat-ic"></span>Open 7am to 4pm</div>
+          </div>
+          <div class="b-about">
+            <img src="images/coffee-shop-team.jpg" alt="Cafe team behind the counter" loading="lazy">
+            <p>A few friendly faces who remember your order. Family-run on Wall Street since 2019.</p>
+          </div>
+          <div class="bfoot">© Maplewood Cafe · Norwalk, CT</div>
+        </div>
+      </div>
+
+      <!-- Restaurant -->
+      <div class="demo-panel" id="panel-rest">
+        <div class="browser">
+          <div class="bbar"><i></i><i></i><i></i><span class="burl">nonnaskitchen.com</span></div>
+          <div class="bnav">
+            <span class="bnav-brand">Nonna's Kitchen</span>
+            <div class="bnav-links"><span>Menu</span><span>Order</span><span>Reserve</span></div>
+          </div>
+          <div class="bhero bsite">
+            <div class="bhero-text">
+              <div class="b-eyebrow">Norwalk · Italian, family style</div>
+              <h5>Handmade pasta, the way Nonna meant it.</h5>
+              <p>Order online for pickup, or book a table for tonight. Fresh sauce, no shortcuts.</p>
+              <span class="b-btn">Order online →</span>
+            </div>
+            <div class="bhero-block grad-rest">Fresh pasta · daily specials</div>
+          </div>
+          <div class="b-feat-row">
+            <div class="b-feat"><span class="b-feat-ic"></span>Order for pickup</div>
+            <div class="b-feat"><span class="b-feat-ic"></span>Reserve a table</div>
+            <div class="b-feat"><span class="b-feat-ic"></span>Catering available</div>
+          </div>
+          <div class="bfoot">© Nonna's Kitchen · Norwalk, CT</div>
+        </div>
+      </div>
+
+      <!-- Trades -->
+      <div class="demo-panel" id="panel-trade">
+        <div class="browser">
+          <div class="bbar"><i></i><i></i><i></i><span class="burl">northsideplumbing.com</span></div>
+          <div class="bnav">
+            <span class="bnav-brand">Northside Plumbing &amp; Heating</span>
+            <div class="bnav-links"><span>Services</span><span>Reviews</span><span>Call</span></div>
+          </div>
+          <div class="bhero bsite">
+            <div class="bhero-text">
+              <div class="b-eyebrow">Fairfield County · Licensed &amp; insured</div>
+              <h5>Burst pipe? We pick up 24/7.</h5>
+              <p>Same-day repairs, upfront pricing, no call-out surprises. Tap to call and we're on the way.</p>
+              <span class="b-btn">Call now: (203) 555-0142</span>
+            </div>
+            <div class="bhero-block grad-trade">24/7 emergency service</div>
+          </div>
+          <div class="b-feat-row">
+            <div class="b-feat"><span class="b-feat-ic"></span>Free quotes</div>
+            <div class="b-feat"><span class="b-feat-ic"></span>Upfront flat pricing</div>
+            <div class="b-feat"><span class="b-feat-ic"></span>Emergency callout</div>
+          </div>
+          <div class="bfoot">© Northside Plumbing &amp; Heating · Norwalk, CT</div>
+        </div>
+      </div>
+
+      <!-- Salon -->
+      <div class="demo-panel" id="panel-salon">
+        <div class="browser">
+          <div class="bbar"><i></i><i></i><i></i><span class="burl">fadeandco.com</span></div>
+          <div class="bnav">
+            <span class="bnav-brand">Fade &amp; Co.</span>
+            <div class="bnav-links"><span>Services</span><span>Gallery</span><span>Book</span></div>
+          </div>
+          <div class="bhero bsite">
+            <div class="bhero-text">
+              <div class="b-eyebrow">Norwalk · Barber &amp; grooming</div>
+              <h5>Book your chair in about 30 seconds.</h5>
+              <p>Pick your barber, pick your time, done. See the cut you want in the gallery first.</p>
+              <span class="b-btn">Book now →</span>
+            </div>
+            <div class="bhero-block grad-salon">Cuts · fades · beard trims</div>
+          </div>
+          <div class="b-feat-row">
+            <div class="b-feat"><span class="b-feat-ic"></span>Online booking</div>
+            <div class="b-feat"><span class="b-feat-ic"></span>Walk-ins welcome</div>
+            <div class="b-feat"><span class="b-feat-ic"></span>Open late Thursdays</div>
+          </div>
+          <div class="bfoot">© Fade &amp; Co. · Norwalk, CT</div>
+        </div>
+      </div>
+    </div>
+    <p class="offer-note">// Demos I built to show range. Yours gets swapped for the real thing after our first call.</p>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="wrap">
+    <div class="sec-head r">
+      <div class="eyebrow">Proof I can build</div>
+      <h2>And a real product, shipped end to end.</h2>
+    </div>
+    <div class="case r">
+      <div class="phone" aria-label="Screenshot of the meditation app">
+        <div class="screen">
+          <div class="top">Morning Practice</div>
+          <h4>Sit &amp; breathe</h4>
+          <div class="p-orb"><span>04:12</span></div>
+          <div class="cue">Follow the ring. In, and out.</div>
+          <div class="p-stats">
+            <div><div class="pn">12</div><div class="pl">Day streak</div></div>
+            <div><div class="pn">3.4k</div><div class="pl">Minutes</div></div>
+            <div><div class="pn">28</div><div class="pl">Sessions</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="eyebrow">Case study</div>
+        <h3>A meditation app, built solo</h3>
+        <div class="cs-block">
+          <span class="k">What I built</span>
+          <p>A quiet meditation companion with a guided timer, streaks, and progress tracking. Designed, built, and shipped by me, start to finish.</p>
+        </div>
+        <div class="cs-block">
+          <span class="k">Why it matters to you</span>
+          <p>It's proof I can take an idea from zero to a real, working product. Your site is a smaller job than this, and it gets the same care.</p>
+        </div>
+        <div class="result">
+          <div><div class="n">0→1</div><div class="l">Idea to shipped</div></div>
+          <div><div class="n">Solo</div><div class="l">Design + build</div></div>
+          <div><div class="n">Live</div><div class="l">Real product</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="offer">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head r">
       <div class="eyebrow">The offer</div>
       <h2>One price. No hourly meter. Done fast.</h2>
     </div>
+    <p class="anchor-line r">// For context: a web agency charges $5,000 to $35,000 for a small-business site. I'm one guy in Norwalk keeping it honest.</p>
     <div class="offers">
-      <div class="offer feature">
+      <div class="offer feature r">
         <span class="tag">Most popular</span>
         <h3>Website fix</h3>
         <p>Site broken, slow, or looks wrong on phones? I'll find the problem and fix it, usually the same day.</p>
         <div class="price">$200 <small>flat</small></div>
       </div>
-      <div class="offer">
+      <div class="offer r">
         <span class="tag muted">Fresh start</span>
         <h3>1-page website</h3>
         <p>A clean, mobile-first single page that tells customers who you are and how to reach you.</p>
@@ -242,7 +528,7 @@
           </ul>
         </div>
       </div>
-      <div class="offer">
+      <div class="offer r">
         <span class="tag muted">Full presence</span>
         <h3>5-page website</h3>
         <p>Home, services, about, gallery, and contact. A complete site, priced under what most agencies charge.</p>
@@ -257,7 +543,7 @@
           </ul>
         </div>
       </div>
-      <div class="offer">
+      <div class="offer r">
         <span class="tag muted">Peace of mind</span>
         <h3>Monthly care</h3>
         <p>Updates, backups, security, and small changes, all handled. You never have to touch the code.</p>
@@ -274,129 +560,83 @@
   </div>
 </section>
 
-<section id="work">
+<section id="guarantee">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Featured work</div>
-      <h2>A meditation app, built end to end.</h2>
-    </div>
-    <div class="case">
-      <div class="phone" aria-label="Screenshot of the meditation app">
-        <div class="screen">
-          <div class="top">Morning Practice</div>
-          <h4>Sit &amp; breathe</h4>
-          <div class="p-orb"><span>04:12</span></div>
-          <div class="cue">Follow the ring. In, and out.</div>
-          <div class="p-stats">
-            <div><div class="pn">12</div><div class="pl">Day streak</div></div>
-            <div><div class="pn">3.4k</div><div class="pl">Minutes</div></div>
-            <div><div class="pn">28</div><div class="pl">Sessions</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="case-body">
-        <div class="eyebrow">Case study</div>
-        <h3>Buddhist Practice Companion</h3>
-        <div class="cs-block">
-          <span class="k">Problem</span>
-          <p>Most meditation apps feel cluttered and gamified. Noisy, when the practice itself is supposed to be calm.</p>
-        </div>
-        <div class="cs-block">
-          <span class="k">What I built</span>
-          <p>A quiet, focused companion with a guided timer, streaks, and progress tracking. It's built so the interface gets out of the way and the practice stays front and center.</p>
-        </div>
-        <div class="cs-block">
-          <span class="k">The point</span>
-          <p>It's proof I can take an idea from zero to a real, working product. I designed it, built it, and shipped it myself.</p>
-        </div>
-        <div class="result">
-          <div><div class="n">0→1</div><div class="l">Idea to shipped</div></div>
-          <div><div class="n">Solo</div><div class="l">Design + build</div></div>
-          <div><div class="n">Live</div><div class="l">Real product</div></div>
-        </div>
-      </div>
+    <div class="callout r">
+      <div class="eyebrow">// The deal, plainly</div>
+      <h2>You're covered, start to finish.</h2>
+      <ul class="guarantee-list">
+        <li><b>You don't pay a cent until your site is live and you're happy with it.</b></li>
+        <li><b>Don't like the first design?</b> I redo it. No charge, no drama.</li>
+        <li><b>The price I quote is the price you pay.</b> No surprise invoices.</li>
+        <li><b>You own the site and the code.</b> Not me. No lock-in, ever.</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section id="founding">
   <div class="wrap">
-    <div class="founding">
+    <div class="callout r">
       <div class="eyebrow">Founding clients</div>
-      <h2>Looking for my first 3 local clients.</h2>
-      <p>I'm just getting started taking on local businesses, so the first 3 who sign on get 20% off in exchange for a short testimonial and permission to feature the finished site here. No fake reviews, no stock quotes. Just an honest trade while I build up a track record in Norwalk.</p>
+      <h2>First 3 spots: 20% off.</h2>
+      <p>I won't fake testimonials or buy stock quotes. So instead, my first 3 local clients get 20% off, and in return I just ask for an honest review once you see the site working. It's a fair trade while I build up a track record in Norwalk. When these spots are gone, they're gone.</p>
     </div>
-  </div>
-</section>
-
-<section id="sample">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Sample build</div>
-      <h2>What a local site looks like from me.</h2>
-    </div>
-    <div class="browser">
-      <div class="bbar"><i></i><i></i><i></i><span class="burl">maplewoodcafe.com</span></div>
-      <div class="bnav">
-        <span class="bnav-brand">Maplewood Cafe</span>
-        <div class="bnav-links"><span>Menu</span><span>About</span><span>Contact</span></div>
-      </div>
-      <div class="bhero">
-        <div class="bhero-text">
-          <div class="b-eyebrow">Norwalk · Coffee &amp; Kitchen</div>
-          <h5>Slow mornings, good coffee, walk right in.</h5>
-          <p>Fresh-roasted beans, all-day breakfast, and a corner table with your name on it.</p>
-          <span class="b-btn">See the menu →</span>
-        </div>
-        <img class="bhero-img" src="images/barista-hero.jpg" alt="Barista smiling while preparing an espresso at the counter">
-      </div>
-      <div class="b-feat-row">
-        <div class="b-feat"><span class="b-feat-ic"></span>Fresh roasted daily</div>
-        <div class="b-feat"><span class="b-feat-ic"></span>Baked in-house</div>
-        <div class="b-feat"><span class="b-feat-ic"></span>Open 7am to 4pm</div>
-      </div>
-      <div class="bfoot">© Maplewood Cafe · Norwalk, CT</div>
-    </div>
-    <p class="offer-note">// Demo build, will be swapped for a real client site after the first job.</p>
   </div>
 </section>
 
 <section id="how">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head r">
       <div class="eyebrow">How it works</div>
       <h2>Simple, and fast.</h2>
     </div>
     <div class="steps">
-      <div class="step"><div class="num">Step 1</div><h3>We talk</h3><p>A quick call or message. You tell me the problem; I give you a flat price on the spot.</p></div>
-      <div class="step"><div class="num">Step 2</div><h3>I build</h3><p>You get your site or fix in days, not weeks. One round of changes included.</p></div>
-      <div class="step"><div class="num">Step 3</div><h3>You launch</h3><p>It goes live. Pay when you're happy. Add monthly care if you want it hands-off.</p></div>
+      <div class="step r"><div class="num">Step 1</div><h3>We talk</h3><p>A quick call or message. You tell me the problem; I give you a flat price on the spot.</p></div>
+      <div class="step r"><div class="num">Step 2</div><h3>I build</h3><p>You get your site or fix in days, not weeks. One round of changes included.</p></div>
+      <div class="step r"><div class="num">Step 3</div><h3>You launch</h3><p>It goes live. Pay when you're happy. Add monthly care if you want it hands-off.</p></div>
     </div>
   </div>
 </section>
 
 <section id="faq">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head r">
       <div class="eyebrow">Questions</div>
       <h2>A few things people usually ask.</h2>
     </div>
     <div class="faq">
-      <div class="faq-item">
+      <div class="faq-item r">
+        <h3>I already have a Facebook page. Isn't that enough?</h3>
+        <p>Social is great, but you don't own it, and 84% of people trust an actual website more than a social page alone. A site is the one spot online that's fully yours, shows up on Google, and keeps working even when the algorithm changes.</p>
+      </div>
+      <div class="faq-item r">
+        <h3>Do I even need a website?</h3>
+        <p>If people can look you up, yes. 62% will skip a business they can't find online, and there are over a billion "near me" searches a month. A simple site is often the difference between getting the call and losing it to the shop that showed up.</p>
+      </div>
+      <div class="faq-item r">
+        <h3>Why not just build it myself on Wix?</h3>
+        <p>You can, and for some people that's the right call. But it eats your time, and the free templates tend to look like free templates. I handle the whole thing so you can run your business, and it comes out looking like yours, not a stock theme.</p>
+      </div>
+      <div class="faq-item r">
+        <h3>What if I don't like it? Do I really not pay upfront?</h3>
+        <p>Right, you don't pay until it's live and you're happy. If the first design misses, I redo it at no cost. The flat price we agree on is the only number you'll see.</p>
+      </div>
+      <div class="faq-item r">
         <h3>Do I own my website?</h3>
         <p>Yes, completely. The code and domain are yours. No lock-in, no monthly fee required to keep it running.</p>
       </div>
-      <div class="faq-item">
+      <div class="faq-item r">
         <h3>Who pays for hosting?</h3>
         <p>Hosting itself is usually free. The only real cost is a domain name, typically $12 to $15 a year, paid directly to the registrar, not to me.</p>
       </div>
-      <div class="faq-item">
-        <h3>What if I need changes after launch?</h3>
-        <p>Small tweaks can be one-off requests, or you can add monthly care and I'll handle updates as they come up.</p>
-      </div>
-      <div class="faq-item">
+      <div class="faq-item r">
         <h3>How fast can we start?</h3>
         <p>Usually within a day or two of our first call. Builds take days, not weeks, once we agree on scope.</p>
+      </div>
+      <div class="faq-item r">
+        <h3>Why so cheap? What's the catch?</h3>
+        <p>No catch. I'm just starting out taking on local businesses, so my prices reflect that while I build a track record. You get the same care either way.</p>
       </div>
     </div>
   </div>
@@ -404,11 +644,11 @@
 
 <section id="about">
   <div class="wrap about">
-    <div>
+    <div class="r">
       <div class="eyebrow">About</div>
       <h2 style="font-size:32px;margin:14px 0 22px">Local, and easy to work with.</h2>
     </div>
-    <div>
+    <div class="r">
       <p>I build the kind of site I'd want for my own business: fast, clean, and no runaround. You get a real person who picks up, explains things in plain English, and delivers on time.</p>
       <p>I'm a developer based in <b>Norwalk, CT</b> with a <b>Master's in Computer Science</b> from Sacred Heart University.</p>
       <p>No agency markup. No offshore handoff. Just me, building your site.</p>
@@ -430,10 +670,12 @@
     <form class="contact-form" action="https://formsubmit.co/rishisolanke57@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="New site inquiry from portfolio.html">
       <input type="hidden" name="_template" value="table">
+      <input type="text" name="name" placeholder="Your name (optional)">
       <input type="email" name="email" placeholder="Your email" required>
-      <textarea name="message" placeholder="Tell me about your site" rows="3" required></textarea>
-      <button type="submit" class="btn btn-primary">Send →</button>
+      <textarea name="message" placeholder="What kind of business, and what do you need?" rows="3" required></textarea>
+      <button type="submit" class="btn btn-primary">Send it, let's talk →</button>
     </form>
+    <p class="contact-micro">No cost. No pitch. I reply to every message myself, usually the same day.</p>
     <p class="contact-alt">Prefer to call or email directly? <a href="mailto:rishisolanke57@gmail.com">rishisolanke57@gmail.com</a> · <a href="tel:+14759883815">(475) 988-3815</a></p>
   </div>
 </section>
@@ -441,9 +683,65 @@
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:10px">
     <span>© 2026 Rushi Solanke · Norwalk, CT</span>
-    <span>Websites for local businesses</span>
+    <span><a href="index.html">Main site</a> · <a href="https://github.com/rishisolanke" target="_blank" rel="noopener">GitHub</a> · Websites for local businesses</span>
   </div>
 </footer>
+
+<script>
+// add .r to elements you want revealed on scroll; gated by html.js so no-JS shows all
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll reveals
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+      });
+    }, { threshold: .08, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.r').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.r').forEach(function(el){ el.classList.add('on'); });
+  }
+
+  // Count-up for stat numbers (handles decimals + suffixes like %, x)
+  function animateCount(el){
+    var target = parseFloat(el.dataset.target);
+    var dec = parseInt(el.dataset.decimals || '0', 10);
+    var suffix = el.dataset.suffix || '';
+    if (isNaN(target)) return;
+    var dur = 1100, start = null;
+    function tick(now){
+      if (start === null) start = now;
+      var p = Math.min(1, (now - start) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(dec) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toFixed(dec) + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+  var nums = document.querySelectorAll('.stat-num[data-target]');
+  if (reduce || !('IntersectionObserver' in window)) {
+    // leave the final values already in the HTML
+  } else {
+    var cObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ animateCount(e.target); cObs.unobserve(e.target); }
+      });
+    }, { threshold: .5 });
+    nums.forEach(function(n){ cObs.observe(n); });
+  }
+
+  // Smooth scroll for in-page nav
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var t = document.querySelector(a.getAttribute('href'));
+      if (t){ e.preventDefault(); t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
