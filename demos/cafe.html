@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maplewood Cafe - Demo</title>
+<meta name="description" content="Demo site: a third-wave specialty coffee shop and all-day breakfast spot in Norwalk, CT. Built by Rushi Solanke.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23241A14%22/><circle cx=%2250%22 cy=%2250%22 r=%2220%22 fill=%22%23E4572E%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#FBF7F0;color:#241A14;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  ::selection{background:#E4572E;color:#FBF7F0}
+  a{color:inherit}
+  .mw-disp{font-family:'Bricolage Grotesque',system-ui,sans-serif}
+  .mw-mono{font-family:'Space Mono',monospace}
+  @keyframes steam1{0%{opacity:0;transform:translateY(10px) scaleX(1)}30%{opacity:.5}100%{opacity:0;transform:translateY(-70px) scaleX(1.6)}}
+  @keyframes steam2{0%{opacity:0;transform:translateY(10px) scaleX(1)}40%{opacity:.4}100%{opacity:0;transform:translateY(-90px) scaleX(1.4)}}
+  .mw-reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .mw-reveal.on{opacity:1;transform:none}
+  .mw-img{display:block;width:100%;object-fit:cover}
+  @media (max-width:720px){.mw-beans,.mw-visit{grid-template-columns:1fr!important}.mw-visit-map{min-height:220px!important}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.mw-reveal{opacity:1;transform:none;transition:none}}
+</style>
+<noscript><style>.mw-reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<div style="max-width:1200px;margin:0 auto;position:relative">
+
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(251,247,240,.86);backdrop-filter:blur(8px);border-bottom:1.5px solid #241A14">
+    <a href="#top" style="text-decoration:none;font-weight:800;font-size:19px;letter-spacing:-.02em;display:flex;align-items:center;gap:9px" class="mw-disp">
+      <span style="width:12px;height:12px;border-radius:50%;background:#E4572E;display:inline-block"></span>Maplewood
+    </a>
+    <div style="display:flex;gap:26px;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase" class="mw-mono">
+      <a href="#menu" style="text-decoration:none">Menu</a>
+      <a href="#beans" style="text-decoration:none">Beans</a>
+      <a href="#visit" style="text-decoration:none">Visit</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" style="position:relative;padding:34px 24px 0">
+    <div style="position:relative">
+      <div style="position:relative;border:1.5px solid #241A14;overflow:hidden">
+        <img class="mw-img" src="../images/barista-hero.jpg" alt="Barista preparing an espresso in the morning light" style="aspect-ratio:16/10" loading="lazy">
+        <div aria-hidden="true" style="position:absolute;left:22%;bottom:26%;width:40px;height:80px;pointer-events:none">
+          <span style="position:absolute;left:0;bottom:0;width:18px;height:60px;background:radial-gradient(circle,rgba(255,255,255,.9),transparent 70%);filter:blur(6px);animation:steam1 4.5s ease-in infinite"></span>
+          <span style="position:absolute;left:16px;bottom:0;width:16px;height:60px;background:radial-gradient(circle,rgba(255,255,255,.8),transparent 70%);filter:blur(6px);animation:steam2 5.5s ease-in .8s infinite"></span>
+        </div>
+      </div>
+      <h1 class="mw-disp" style="position:absolute;left:-4px;bottom:-26px;margin:0;font-weight:800;letter-spacing:-.03em;line-height:.82;font-size:clamp(58px,13vw,168px);color:#241A14;text-shadow:0 2px 0 #FBF7F0,3px 0 0 #FBF7F0,-3px 0 0 #FBF7F0,0 -2px 0 #FBF7F0">
+        Maple<span style="color:#E4572E">wood</span>
+      </h1>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;padding:44px 2px 0">
+      <p style="margin:0;font-size:clamp(19px,2.4vw,26px);font-weight:500;max-width:15ch;line-height:1.15">Slow mornings, good coffee, walk right in.</p>
+      <p class="mw-mono" style="margin:0;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:#6B8F3D;text-align:right">Third-wave roaster &amp; all-day breakfast<br>Norwalk, Connecticut</p>
+    </div>
+  </header>
+
+  <!-- TODAY'S POUR -->
+  <section style="margin:46px 24px 0;background:#E4572E;color:#FBF7F0;border:1.5px solid #241A14;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;padding:22px 26px">
+    <div class="mw-mono" style="font-size:11.5px;letter-spacing:.14em;text-transform:uppercase">Today's<br>Pour</div>
+    <div>
+      <div class="mw-disp" style="font-weight:800;font-size:clamp(22px,3.4vw,36px);line-height:1;letter-spacing:-.02em">Ethiopia Guji</div>
+      <div style="margin-top:8px;font-size:15px;opacity:.92">Blueberry · Cocoa · A little sunshine. Filter or as an espresso.</div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" style="padding:70px 24px 20px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px">
+      <h2 class="mw-disp" style="margin:0;font-weight:800;font-size:clamp(34px,6vw,64px);letter-spacing:-.03em;line-height:.9">The Menu</h2>
+      <span class="mw-mono" style="font-size:12px;color:#6B8F3D;letter-spacing:.04em">pull up a stool</span>
+    </div>
+    <div style="background:#fff;border:1.5px solid #241A14;padding:clamp(22px,4vw,44px);margin-top:22px;box-shadow:8px 8px 0 #6B8F3D">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,5vw,60px)">
+        <div>
+          <div class="mw-mono" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#E4572E;padding-bottom:12px;margin-bottom:6px;border-bottom:1.5px solid #241A14">Espresso Bar</div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Espresso</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">3.25</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Cortado</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">4.00</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Cappuccino</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">4.50</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Flat White</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">4.75</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Latte</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">5.00</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Filter / Pour-over</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">4.25</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Cold Brew</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">4.75</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Matcha Latte</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">5.25</span></div>
+        </div>
+        <div>
+          <div class="mw-mono" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#E4572E;padding-bottom:12px;margin-bottom:6px;border-bottom:1.5px solid #241A14">The Kitchen</div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Sourdough + Cultured Butter</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">4.50</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Soft Scramble, Chives</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">9.00</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Avocado Toast, Chili</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">11.00</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Breakfast Sandwich</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">10.50</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Buttermilk Pancakes</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">12.00</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Granola + Yogurt</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">8.50</span></div>
+          <div class="mw-reveal" style="display:flex;align-items:baseline;gap:8px;padding:9px 0"><span style="font-size:16px;font-weight:500;white-space:nowrap">Seasonal Galette</span><span style="flex:1;border-bottom:1.5px dotted #241A14;opacity:.4;transform:translateY(-4px)"></span><span class="mw-mono" style="font-size:14px;font-weight:700">6.50</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEANS -->
+  <section id="beans" style="padding:60px 24px 20px">
+    <div class="mw-beans" style="display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center">
+      <div style="border:1.5px solid #241A14;overflow:hidden">
+        <img class="mw-img" src="../images/barista-hero.jpg" alt="Coffee being pulled at the bar" style="aspect-ratio:4/5;object-position:60% center" loading="lazy">
+      </div>
+      <div>
+        <div class="mw-mono" style="font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#E4572E;margin-bottom:14px">Our Beans</div>
+        <h2 class="mw-disp" style="margin:0 0 18px;font-weight:700;font-size:clamp(26px,3.6vw,42px);letter-spacing:-.02em;line-height:1.02">We roast small, and we roast often.</h2>
+        <p style="margin:0 0 14px;font-size:16.5px;line-height:1.6;max-width:44ch">Every bag is roasted a few blocks from where you're standing, in batches small enough to taste as they go. We buy seasonally, pay fairly, and keep the roast light enough to let the origin do the talking.</p>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;max-width:44ch">Beans go on the shelf the same week they're roasted. If it's older than that, it's not for sale. It's for us.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" style="padding:64px 24px 30px">
+    <div class="mw-visit" style="background:#6B8F3D;color:#FBF7F0;border:1.5px solid #241A14;display:grid;grid-template-columns:1.1fr .9fr">
+      <div style="padding:clamp(26px,4vw,48px)">
+        <div class="mw-mono" style="font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.85">Visit</div>
+        <h2 class="mw-disp" style="margin:10px 0 22px;font-weight:800;font-size:clamp(30px,4.6vw,54px);letter-spacing:-.02em;line-height:.95">Open 7 to 4,<br>every day.</h2>
+        <div class="mw-mono" style="font-size:14px;line-height:1.9;letter-spacing:.02em">
+          124 Washington St<br>Norwalk, CT 06854<br>(203) 555-0163
+        </div>
+        <a href="#top" class="mw-mono" style="display:inline-block;margin-top:26px;background:#E4572E;color:#FBF7F0;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:14px 26px;border:1.5px solid #241A14;box-shadow:4px 4px 0 #241A14">Walk right in →</a>
+      </div>
+      <div class="mw-visit-map" style="border-left:1.5px solid #241A14;min-height:280px;position:relative;overflow:hidden;background:
+          repeating-linear-gradient(0deg,rgba(36,26,20,.10) 0 1px,transparent 1px 46px),
+          repeating-linear-gradient(90deg,rgba(36,26,20,.10) 0 1px,transparent 1px 46px),#5F8236">
+        <div style="position:absolute;left:18%;top:0;bottom:0;width:14px;background:rgba(251,247,240,.14)"></div>
+        <div style="position:absolute;top:44%;left:0;right:0;height:16px;background:rgba(251,247,240,.14)"></div>
+        <div style="position:absolute;left:calc(18% + 7px);top:44%;transform:translate(-50%,-50%);text-align:center">
+          <div style="width:22px;height:22px;border-radius:50%;background:#E4572E;border:2px solid #FBF7F0;margin:0 auto;box-shadow:0 6px 14px rgba(36,26,20,.4)"></div>
+          <div class="mw-mono" style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-top:8px;background:#241A14;color:#FBF7F0;padding:3px 7px;display:inline-block">124 Washington St</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mw-mono" style="padding:26px 24px 46px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:#241A14;border-top:1.5px solid #241A14;margin:0 24px">
+    <span>Maplewood Cafe © 2026</span>
+    <span style="color:#6B8F3D">Roasted &amp; poured in Norwalk, CT</span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var els = document.querySelectorAll('.mw-reveal');
+  if (reduce || !('IntersectionObserver' in window)) { els.forEach(function(el){ el.classList.add('on'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ var el=e.target; var d=(+el.dataset.di||0)*45; setTimeout(function(){ el.classList.add('on'); }, d); io.unobserve(el); }
+    });
+  }, { threshold:.12 });
+  els.forEach(function(el,i){ el.dataset.di = i % 8; io.observe(el); });
+})();
+</script>
+</body>
+</html>

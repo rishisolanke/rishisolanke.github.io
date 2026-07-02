@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northside Plumbing &amp; Heating - Demo</title>
+<meta name="description" content="Demo site: licensed, family-run plumbing and HVAC across Fairfield County, CT. Built by Rushi Solanke.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230E2A47%22/><text x=%2250%22 y=%2272%22 font-family=%22Arial,sans-serif%22 font-weight=%22900%22 font-size=%2264%22 fill=%22%23F4B41A%22 text-anchor=%22middle%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:#0E2A47;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  ::selection{background:#F4B41A;color:#0E2A47}
+  .np-exp{font-family:'Archivo Expanded','Archivo',sans-serif}
+  .np-num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+  a{color:inherit}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(244,180,26,.55)}50%{box-shadow:0 0 0 14px rgba(244,180,26,0)}}
+  .np-call{animation:pulse 2.4s ease-out infinite}
+  a:focus-visible,button:focus-visible{outline:3px solid #F4B41A;outline-offset:2px}
+  .np-hero-img{width:100%;aspect-ratio:4/3.4;object-fit:cover;display:block}
+  @media (max-width:820px){.np-grid{grid-template-columns:1fr!important}.np-3{grid-template-columns:1fr!important}.np-4{grid-template-columns:repeat(2,1fr)!important}.np-2{grid-template-columns:1fr!important}.np-guar{grid-template-columns:1fr!important}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div style="padding-bottom:76px">
+
+  <!-- EMERGENCY BAR -->
+  <div style="background:#0E2A47;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;padding:9px 16px;font-size:13.5px;font-weight:600;text-align:center">
+    <span style="width:8px;height:8px;border-radius:50%;background:#F4B41A;box-shadow:0 0 0 3px rgba(244,180,26,.3)"></span>
+    24/7 Emergency Service ·
+    <a href="tel:+12035550142" class="np-num" style="text-decoration:none;color:#F4B41A;font-weight:800">(203) 555-0142</a>
+  </div>
+
+  <!-- NAV -->
+  <nav style="display:flex;align-items:center;justify-content:space-between;padding:16px 22px;max-width:1200px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:11px;font-weight:900;font-size:18px;letter-spacing:-.01em">
+      <span style="display:grid;place-items:center;width:34px;height:34px;background:#0E2A47;color:#F4B41A;border-radius:8px;font-family:'Archivo Expanded',sans-serif">N</span>
+      Northside
+    </div>
+    <a href="tel:+12035550142" class="np-num np-call" style="background:#F4B41A;color:#0E2A47;text-decoration:none;font-weight:800;font-size:14px;padding:11px 20px;border-radius:9px">Call now</a>
+  </nav>
+
+  <!-- HERO -->
+  <header style="max-width:1200px;margin:0 auto;padding:20px 22px 8px">
+    <div class="np-grid" style="display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:#EEF2F6;color:#0E2A47;font-weight:700;font-size:12.5px;padding:7px 13px;border-radius:100px;margin-bottom:22px">★★★★★ <span style="opacity:.7;font-weight:600">Rated 4.9 · 600+ neighbors</span></div>
+        <h1 class="np-exp" style="margin:0;font-weight:900;font-size:clamp(38px,6vw,72px);line-height:.98;letter-spacing:-.02em">Water where you want it.<br><span style="color:#F4B41A;-webkit-text-stroke:1px #0E2A47">Not where you don't.</span></h1>
+        <p style="margin:22px 0 30px;font-size:18px;line-height:1.5;color:#334a63;max-width:46ch">Licensed, family-run plumbing &amp; HVAC across Fairfield County. Same-day repairs, upfront flat pricing, no call-out surprises.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="tel:+12035550142" class="np-call" style="display:inline-flex;align-items:center;gap:9px;background:#F4B41A;color:#0E2A47;text-decoration:none;font-weight:800;font-size:17px;padding:16px 28px;border-radius:11px">📞 Call (203) 555-0142</a>
+          <a href="#book" style="display:inline-flex;align-items:center;gap:9px;background:#fff;color:#0E2A47;text-decoration:none;font-weight:700;font-size:17px;padding:16px 26px;border-radius:11px;border:2px solid #0E2A47">Book online</a>
+        </div>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(14,42,71,.5)">
+        <img class="np-hero-img" src="../images/plumbing-hero.jpg" alt="Plumber fixing pipes under a sink" loading="lazy">
+      </div>
+    </div>
+  </header>
+
+  <!-- TRUST ROW -->
+  <section style="max-width:1200px;margin:34px auto 0;padding:0 22px">
+    <div class="np-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+      <div style="background:#EEF2F6;border-radius:12px;padding:18px 16px;text-align:center"><div style="font-size:22px">🛡️</div><div style="font-weight:800;font-size:14.5px;margin-top:6px">Licensed</div><div style="font-size:12px;color:#5b7089;margin-top:3px">CT #PLM-0288451</div></div>
+      <div style="background:#EEF2F6;border-radius:12px;padding:18px 16px;text-align:center"><div style="font-size:22px">✅</div><div style="font-weight:800;font-size:14.5px;margin-top:6px">Insured</div><div style="font-size:12px;color:#5b7089;margin-top:3px">Fully bonded</div></div>
+      <div style="background:#EEF2F6;border-radius:12px;padding:18px 16px;text-align:center"><div style="font-size:22px">★</div><div style="font-weight:800;font-size:14.5px;margin-top:6px">4.9 rating</div><div style="font-size:12px;color:#5b7089;margin-top:3px">600+ reviews</div></div>
+      <div style="background:#EEF2F6;border-radius:12px;padding:18px 16px;text-align:center"><div style="font-size:22px">🏷️</div><div style="font-weight:800;font-size:14.5px;margin-top:6px">Upfront pricing</div><div style="font-size:12px;color:#5b7089;margin-top:3px">No surprises</div></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="max-width:1080px;margin:64px auto 0;padding:0 22px;text-align:center">
+    <div style="font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#F4B41A">How it works</div>
+    <h2 class="np-exp" style="margin:10px 0 40px;font-weight:800;font-size:clamp(28px,4vw,44px);letter-spacing:-.01em">Fixed right, first time.</h2>
+    <div class="np-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <div style="text-align:left;background:#fff;border:1.5px solid #e5ebf1;border-radius:14px;padding:26px"><div class="np-num" style="font-family:'Archivo Expanded',sans-serif;font-weight:900;font-size:40px;color:#F4B41A;line-height:1">01</div><div style="font-weight:800;font-size:19px;margin-top:8px">Call</div><div style="font-size:14.5px;color:#5b7089;margin-top:6px;line-height:1.5">Reach a real person any hour. We'll book the soonest slot that works.</div></div>
+      <div style="text-align:left;background:#fff;border:1.5px solid #e5ebf1;border-radius:14px;padding:26px"><div class="np-num" style="font-family:'Archivo Expanded',sans-serif;font-weight:900;font-size:40px;color:#F4B41A;line-height:1">02</div><div style="font-weight:800;font-size:19px;margin-top:8px">We come</div><div style="font-size:14.5px;color:#5b7089;margin-top:6px;line-height:1.5">A licensed tech arrives on time in a stocked truck and diagnoses fast.</div></div>
+      <div style="text-align:left;background:#fff;border:1.5px solid #e5ebf1;border-radius:14px;padding:26px"><div class="np-num" style="font-family:'Archivo Expanded',sans-serif;font-weight:900;font-size:40px;color:#F4B41A;line-height:1">03</div><div style="font-weight:800;font-size:19px;margin-top:8px">Fixed right</div><div style="font-size:14.5px;color:#5b7089;margin-top:6px;line-height:1.5">You approve a flat price, we fix it, and back it with our guarantee.</div></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section style="background:#0E2A47;color:#fff;margin-top:70px;padding:60px 22px">
+    <div style="max-width:1200px;margin:0 auto">
+      <h2 class="np-exp" style="margin:0 0 8px;font-weight:800;font-size:clamp(28px,4vw,46px);letter-spacing:-.01em">What we fix</h2>
+      <p style="margin:0 0 34px;color:#9db3cc;font-size:16px">Residential &amp; light commercial. If it carries water or heat, we handle it.</p>
+      <div class="np-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:24px"><div style="font-size:26px">🚿</div><div style="font-weight:800;font-size:18px;margin-top:12px">Drains &amp; Clogs</div><div style="font-size:14px;color:#9db3cc;margin-top:6px;line-height:1.5">Cleared fast, camera-inspected, done clean.</div></div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:24px"><div style="font-size:26px">🔥</div><div style="font-weight:800;font-size:18px;margin-top:12px">Water Heaters</div><div style="font-size:14px;color:#9db3cc;margin-top:6px;line-height:1.5">Repair, replace, tankless installs.</div></div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:24px"><div style="font-size:26px">💧</div><div style="font-weight:800;font-size:18px;margin-top:12px">Leaks &amp; Pipes</div><div style="font-size:14px;color:#9db3cc;margin-top:6px;line-height:1.5">Located, patched, or repiped.</div></div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:24px"><div style="font-size:26px">❄️</div><div style="font-weight:800;font-size:18px;margin-top:12px">Heating &amp; HVAC</div><div style="font-size:14px;color:#9db3cc;margin-top:6px;line-height:1.5">Furnaces, boilers, no-heat calls.</div></div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:24px"><div style="font-size:26px">🚽</div><div style="font-weight:800;font-size:18px;margin-top:12px">Fixtures</div><div style="font-size:14px;color:#9db3cc;margin-top:6px;line-height:1.5">Toilets, faucets, sinks, disposals.</div></div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:24px"><div style="font-size:26px">🚨</div><div style="font-weight:800;font-size:18px;margin-top:12px">Emergencies</div><div style="font-size:14px;color:#9db3cc;margin-top:6px;line-height:1.5">24/7 burst pipes and floods.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="max-width:1100px;margin:0 auto;padding:56px 22px">
+    <div class="np-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center">
+      <div><div class="np-exp np-num" data-count="27" data-suffix="" style="font-weight:900;font-size:clamp(42px,7vw,72px);color:#0E2A47;line-height:1">27</div><div style="font-weight:700;font-size:15px;color:#5b7089;margin-top:6px">Years in business</div></div>
+      <div><div class="np-exp np-num" data-count="18000" data-suffix="+" style="font-weight:900;font-size:clamp(42px,7vw,72px);color:#0E2A47;line-height:1">18,000+</div><div style="font-weight:700;font-size:15px;color:#5b7089;margin-top:6px">Jobs completed</div></div>
+      <div><div class="np-exp np-num" data-count="45" data-suffix=" min" style="font-weight:900;font-size:clamp(42px,7vw,72px);color:#0E2A47;line-height:1">45 min</div><div style="font-weight:700;font-size:15px;color:#5b7089;margin-top:6px">Avg. response time</div></div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section id="book" style="max-width:1100px;margin:0 auto;padding:0 22px">
+    <div class="np-guar" style="background:#F4B41A;border-radius:18px;padding:clamp(28px,5vw,52px);display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center">
+      <div>
+        <div style="font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#0E2A47;opacity:.7">Our promise</div>
+        <h2 class="np-exp" style="margin:8px 0 10px;font-weight:900;font-size:clamp(26px,4vw,42px);letter-spacing:-.01em;color:#0E2A47">Upfront pricing, guaranteed work.</h2>
+        <p style="margin:0;font-size:16.5px;color:#0E2A47;opacity:.85;max-width:52ch">You approve the flat price before we start. Every repair backed by our workmanship guarantee. No overtime charges, ever.</p>
+      </div>
+      <a href="tel:+12035550142" class="np-num" style="white-space:nowrap;background:#0E2A47;color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:17px 30px;border-radius:12px">Tap to call →</a>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section style="max-width:1100px;margin:60px auto 0;padding:0 22px">
+    <div class="np-2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div style="background:#EEF2F6;border-radius:14px;padding:26px"><div style="color:#F4B41A;font-size:15px;letter-spacing:2px">★★★★★</div><p style="margin:12px 0 16px;font-size:17px;line-height:1.5;font-weight:500">Burst pipe at 11pm, they answered, showed up in 40 minutes, and had it dry by midnight. Lifesavers.</p><div style="font-weight:700;font-size:14px">Danielle R.</div><div style="font-size:13px;color:#5b7089">Norwalk, CT</div></div>
+      <div style="background:#EEF2F6;border-radius:14px;padding:26px"><div style="color:#F4B41A;font-size:15px;letter-spacing:2px">★★★★★</div><p style="margin:12px 0 16px;font-size:17px;line-height:1.5;font-weight:500">Told me the flat price before touching anything. No upsell, no mess left behind. My go-to from now on.</p><div style="font-weight:700;font-size:14px">Marcus T.</div><div style="font-size:13px;color:#5b7089">Westport, CT</div></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="max-width:1200px;margin:60px auto 0;padding:28px 22px;border-top:1.5px solid #e5ebf1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:#5b7089">
+    <span style="font-weight:800;color:#0E2A47">Northside Plumbing &amp; Heating</span>
+    <span>Serving Fairfield County, CT · CT Lic. #PLM-0288451 · © 2026</span>
+  </footer>
+
+  <!-- STICKY CALL BAR -->
+  <a href="tel:+12035550142" class="np-num" style="position:fixed;left:0;right:0;bottom:0;z-index:80;background:#F4B41A;color:#0E2A47;text-decoration:none;font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center;gap:10px;padding:18px;box-shadow:0 -6px 20px rgba(14,42,71,.18)">📞 Call now, (203) 555-0142</a>
+
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var nums = document.querySelectorAll('[data-count]');
+  function fmt(v){ return v.toLocaleString('en-US'); }
+  if (reduce || !('IntersectionObserver' in window)) return; // final values already in the HTML
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target; io.unobserve(el);
+      var to = +el.dataset.count, suf = el.dataset.suffix || '', dur = 1400, t0 = performance.now();
+      (function tick(now){
+        var p = Math.min(1,(now-t0)/dur), e2 = 1-Math.pow(1-p,3);
+        el.textContent = fmt(Math.round(to*e2)) + suf;
+        if(p<1) requestAnimationFrame(tick); else el.textContent = fmt(to) + suf;
+      })(t0);
+    });
+  }, { threshold:.5 });
+  nums.forEach(function(n){ io.observe(n); });
+})();
+</script>
+</body>
+</html>
