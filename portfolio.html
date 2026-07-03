@@ -190,86 +190,8 @@
   .bbar{display:flex;align-items:center;gap:7px;padding:12px 14px;background:var(--paper-2);border-bottom:1px solid var(--line)}
   .bbar i{width:11px;height:11px;border-radius:50%;background:#D6CEC1;display:block}
   .burl{margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft)}
-  .site{font-size:14px;line-height:1.5}
-  .site h5{font-family:"Fraunces",serif;font-weight:500;line-height:1.1}
-  /* neutralize the global sticky-nav styling for the mock sites' inner <nav> */
-  .site nav{position:static;background:transparent;backdrop-filter:none;border:0;height:auto;z-index:auto}
-
-  /* --- CAFE: warm, cozy, split hero + printed-menu list --- */
-  .site-cafe{background:#F7F1E6;color:#3B2A20}
-  .site-cafe .c-nav{display:flex;justify-content:space-between;align-items:center;gap:8px 14px;flex-wrap:wrap;padding:15px 30px;border-bottom:1px solid #E7DCC9}
-  .site-cafe .c-brand{font-family:"Fraunces",serif;font-weight:600;font-size:17px}
-  .site-cafe .c-brand em{font-style:italic;color:#C15B2E}
-  .site-cafe .c-nav nav{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.06em;color:#8A745E}
-  .site-cafe .c-hero{display:flex;gap:26px;align-items:center;flex-wrap:wrap;padding:30px}
-  .site-cafe .c-hero-txt{flex:1 1 230px}
-  .site-cafe .c-eyebrow{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C15B2E}
-  .site-cafe h5{font-size:29px;margin:10px 0 8px;max-width:14ch}
-  .site-cafe .c-hero-txt p{color:#6E5A48;max-width:34ch}
-  .site-cafe .c-img{flex:1 1 170px;height:150px;width:100%;object-fit:cover;border-radius:12px;display:block}
-  .site-cafe .c-btn{display:inline-block;margin-top:16px;background:#C15B2E;color:#fff;font-family:"Space Mono",monospace;font-size:12px;padding:11px 20px;border-radius:100px}
-  .site-cafe .c-menu{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;padding:4px 30px 6px}
-  @media(max-width:600px){.site-cafe .c-menu{grid-template-columns:1fr}}
-  .site-cafe .c-row{display:flex;align-items:baseline;gap:6px;padding:7px 0}
-  .site-cafe .c-row .m-name{font-weight:600;white-space:nowrap}
-  .site-cafe .c-row .m-dots{flex:1;border-bottom:1px dotted #CDB89A;position:relative;top:-4px}
-  .site-cafe .c-row .m-price{font-family:"Space Mono",monospace;color:#C15B2E;white-space:nowrap}
-  .site-cafe .c-foot{padding:13px 30px;background:#EFE4D2;font-family:"Space Mono",monospace;font-size:11px;color:#8A745E;text-align:center}
-
-  /* --- RESTAURANT: dark, cinematic, full-bleed photo + gold overlay --- */
-  .site-rest{background:#14100D;color:#F0E9DC}
-  .site-rest .r-hero{position:relative;min-height:310px;display:flex}
-  .site-rest .r-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .site-rest .r-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,9,7,.8),rgba(15,12,10,.15) 42%,rgba(12,9,7,.93))}
-  .site-rest .r-inner{position:relative;display:flex;flex-direction:column;width:100%;padding:22px 34px 32px}
-  .site-rest .r-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-  .site-rest .r-brand{font-family:"Fraunces",serif;font-weight:500;font-size:18px;letter-spacing:.16em}
-  .site-rest .r-nav nav{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.1em;color:rgba(240,233,220,.72)}
-  .site-rest .r-center{margin-top:auto}
-  .site-rest .r-eyebrow{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#C6A24B}
-  .site-rest h5{font-size:33px;margin:12px 0 18px;max-width:15ch;color:#F6F0E4}
-  .site-rest .r-btn{display:inline-block;border:1px solid #C6A24B;color:#C6A24B;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.08em;padding:12px 24px;border-radius:2px}
-  .site-rest .r-strip{display:flex;justify-content:center;gap:24px;padding:14px;background:#0C0907;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,233,220,.58);flex-wrap:wrap}
-
-  /* --- TRADES: bold, high-contrast, blue + white + high-vis yellow CTA --- */
-  .site-trade{background:#fff;color:#16324B}
-  .site-trade .t-emerg{background:#0E2E4A;color:#fff;text-align:center;padding:9px;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.08em}
-  .site-trade .t-emerg b{color:#F4B41A}
-  .site-trade .t-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 30px;border-bottom:1px solid #E4E9EE}
-  .site-trade .t-brand{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:16px;letter-spacing:.02em;color:#0E2E4A}
-  .site-trade .t-brand b{color:#1E6BB8}
-  .site-trade .t-nav nav{font-family:"Space Mono",monospace;font-size:11px;color:#5E7488}
-  .site-trade .t-hero{display:flex;gap:24px;align-items:center;flex-wrap:wrap;padding:26px 30px}
-  .site-trade .t-hero-txt{flex:1 1 240px}
-  .site-trade .t-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-  .site-trade .t-badges span{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.03em;background:#EAF2FA;color:#1E6BB8;padding:5px 10px;border-radius:4px;font-weight:700}
-  .site-trade h5{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:25px;line-height:1.15;color:#0E2E4A;max-width:18ch}
-  .site-trade .t-hero-txt p{color:#4A6076;margin-top:8px;max-width:36ch}
-  .site-trade .t-img{flex:1 1 180px;height:172px;width:100%;object-fit:cover;border-radius:8px;display:block}
-  .site-trade .t-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-  .site-trade .t-btn-y{background:#F4B41A;color:#0E2E4A;font-weight:700;font-family:"Hanken Grotesk",sans-serif;font-size:13px;padding:12px 20px;border-radius:6px}
-  .site-trade .t-btn-o{background:#0E2E4A;color:#fff;font-family:"Space Mono",monospace;font-size:12px;padding:12px 18px;border-radius:6px}
-  .site-trade .t-serv{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#E4E9EE}
-  .site-trade .t-serv div{background:#F7FAFC;padding:14px 8px;text-align:center;font-family:"Space Mono",monospace;font-size:11px;color:#16324B}
-  @media(max-width:600px){.site-trade .t-serv{grid-template-columns:repeat(2,1fr)}}
-
-  /* --- SALON: dark editorial barbershop, crimson accent, uppercase --- */
-  .site-salon{background:#17120F;color:#EDE7DF}
-  .site-salon .s-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 30px;border-bottom:1px solid rgba(237,231,223,.12)}
-  .site-salon .s-brand{font-family:"Hanken Grotesk",sans-serif;font-weight:700;font-size:15px;letter-spacing:.22em}
-  .site-salon .s-brand span{color:#C0392B}
-  .site-salon .s-nav nav{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.14em;color:rgba(237,231,223,.6)}
-  .site-salon .s-hero{position:relative;min-height:230px;display:flex}
-  .site-salon .s-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .site-salon .s-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,18,15,.94),rgba(23,18,15,.45))}
-  .site-salon .s-hero-in{position:relative;padding:30px;align-self:center}
-  .site-salon .s-eyebrow{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.2em;color:#C0392B}
-  .site-salon h5{font-family:"Hanken Grotesk",sans-serif;font-weight:700;font-size:29px;line-height:1.05;letter-spacing:.02em;text-transform:uppercase;margin:10px 0 16px;color:#F4EFE8}
-  .site-salon .s-btn{display:inline-block;background:#C0392B;color:#fff;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.06em;padding:12px 22px}
-  .site-salon .s-prices{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;padding:18px 30px 22px}
-  @media(max-width:600px){.site-salon .s-prices{grid-template-columns:1fr}}
-  .site-salon .s-price{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(237,231,223,.12);font-size:13px}
-  .site-salon .s-price .p{font-family:"Space Mono",monospace;color:#C0392B}
+  .demo-link{display:block;text-decoration:none;color:inherit}
+  .demo-frame{width:100%;height:440px;border:0;display:block;background:var(--paper);pointer-events:none}
 
   /* founding + guarantee callout boxes */
   .callout{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px}
@@ -415,121 +337,45 @@
 
       <!-- Cafe: warm, cozy, printed-menu layout -->
       <div class="demo-panel" id="panel-cafe">
-        <div class="browser">
-          <div class="bbar"><i></i><i></i><i></i><span class="burl">maplewoodcafe.com</span></div>
-          <div class="site site-cafe">
-            <div class="c-nav">
-              <span class="c-brand">Maplewood <em>Cafe</em></span>
-              <nav>Menu · Beans · Visit</nav>
-            </div>
-            <div class="c-hero">
-              <div class="c-hero-txt">
-                <div class="c-eyebrow">Norwalk · since 2019</div>
-                <h5>Slow mornings, good coffee.</h5>
-                <p>Fresh-roasted beans and all-day breakfast, a block off Washington Street.</p>
-                <span class="c-btn">See the menu →</span>
-              </div>
-              <img class="c-img" src="images/barista-hero.jpg" alt="Barista preparing an espresso at the counter" loading="lazy">
-            </div>
-            <div class="c-menu">
-              <div class="c-row"><span class="m-name">Cortado</span><span class="m-dots"></span><span class="m-price">$4</span></div>
-              <div class="c-row"><span class="m-name">Cold brew</span><span class="m-dots"></span><span class="m-price">$5</span></div>
-              <div class="c-row"><span class="m-name">Oat latte</span><span class="m-dots"></span><span class="m-price">$5</span></div>
-              <div class="c-row"><span class="m-name">Avocado toast</span><span class="m-dots"></span><span class="m-price">$9</span></div>
-              <div class="c-row"><span class="m-name">Drip coffee</span><span class="m-dots"></span><span class="m-price">$3</span></div>
-              <div class="c-row"><span class="m-name">Breakfast bagel</span><span class="m-dots"></span><span class="m-price">$7</span></div>
-            </div>
-            <div class="c-foot">Open 7am to 4pm · Wall Street, Norwalk</div>
+        <a class="demo-link" href="demos/cafe.html" target="_blank" rel="noopener">
+          <div class="browser">
+            <div class="bbar"><i></i><i></i><i></i><span class="burl">maplewoodcafe.com</span></div>
+            <iframe class="demo-frame" src="demos/cafe.html" title="Maplewood Cafe demo site" loading="lazy" tabindex="-1"></iframe>
           </div>
-        </div>
+        </a>
         <div class="demo-cta"><a class="demo-open" href="demos/cafe.html" target="_blank" rel="noopener">Open the full café demo ↗</a></div>
       </div>
 
       <!-- Restaurant: dark, cinematic, full-bleed photo hero -->
       <div class="demo-panel" id="panel-rest">
-        <div class="browser">
-          <div class="bbar"><i></i><i></i><i></i><span class="burl">theterracenorwalk.com</span></div>
-          <div class="site site-rest">
-            <div class="r-hero">
-              <img src="images/restaurant-hero.jpg" alt="Diners on an ocean-view restaurant terrace at dusk" loading="lazy">
-              <div class="r-shade"></div>
-              <div class="r-inner">
-                <div class="r-nav">
-                  <span class="r-brand">THE TERRACE</span>
-                  <nav>Menu · Wine · Reserve</nav>
-                </div>
-                <div class="r-center">
-                  <div class="r-eyebrow">Waterfront dining · Norwalk</div>
-                  <h5>Dinner with a view of the sound.</h5>
-                  <span class="r-btn">Reserve a table →</span>
-                </div>
-              </div>
-            </div>
-            <div class="r-strip"><span>Dinner Tue to Sun</span><span>Raw bar</span><span>Private events</span></div>
+        <a class="demo-link" href="demos/restaurant.html" target="_blank" rel="noopener">
+          <div class="browser">
+            <div class="bbar"><i></i><i></i><i></i><span class="burl">theterracenorwalk.com</span></div>
+            <iframe class="demo-frame" src="demos/restaurant.html" title="The Terrace demo site" loading="lazy" tabindex="-1"></iframe>
           </div>
-        </div>
+        </a>
         <div class="demo-cta"><a class="demo-open" href="demos/restaurant.html" target="_blank" rel="noopener">Open the full restaurant demo ↗</a></div>
       </div>
 
       <!-- Trades: bold, trust-driven, blue + high-vis yellow -->
       <div class="demo-panel" id="panel-trade">
-        <div class="browser">
-          <div class="bbar"><i></i><i></i><i></i><span class="burl">northsideplumbing.com</span></div>
-          <div class="site site-trade">
-            <div class="t-emerg">24/7 EMERGENCY SERVICE · CALL <b>(203) 555-0142</b></div>
-            <div class="t-nav">
-              <span class="t-brand">NORTHSIDE <b>PLUMBING</b></span>
-              <nav>Services · Reviews · Contact</nav>
-            </div>
-            <div class="t-hero">
-              <div class="t-hero-txt">
-                <div class="t-badges"><span>LICENSED</span><span>INSURED</span><span>★ 4.9 (312)</span></div>
-                <h5>Fast, honest plumbing across Fairfield County.</h5>
-                <p>Same-day repairs. Upfront flat pricing. No call-out surprises.</p>
-                <div class="t-cta">
-                  <span class="t-btn-y">Schedule now</span>
-                  <span class="t-btn-o">Call (203) 555-0142</span>
-                </div>
-              </div>
-              <img class="t-img" src="images/plumbing-hero.jpg" alt="Plumber fixing pipes under a sink" loading="lazy">
-            </div>
-            <div class="t-serv">
-              <div>Drain cleaning</div>
-              <div>Water heaters</div>
-              <div>Leak repair</div>
-              <div>Emergencies</div>
-            </div>
+        <a class="demo-link" href="demos/trades.html" target="_blank" rel="noopener">
+          <div class="browser">
+            <div class="bbar"><i></i><i></i><i></i><span class="burl">northsideplumbing.com</span></div>
+            <iframe class="demo-frame" src="demos/trades.html" title="Northside Plumbing demo site" loading="lazy" tabindex="-1"></iframe>
           </div>
-        </div>
+        </a>
         <div class="demo-cta"><a class="demo-open" href="demos/trades.html" target="_blank" rel="noopener">Open the full trades demo ↗</a></div>
       </div>
 
       <!-- Salon: dark editorial barbershop, crimson + uppercase -->
       <div class="demo-panel" id="panel-salon">
-        <div class="browser">
-          <div class="bbar"><i></i><i></i><i></i><span class="burl">fadeandco.com</span></div>
-          <div class="site site-salon">
-            <div class="s-nav">
-              <span class="s-brand">FADE <span>&amp;</span> CO.</span>
-              <nav>SERVICES · GALLERY · BOOK</nav>
-            </div>
-            <div class="s-hero">
-              <img src="images/salon-hero.jpg" alt="Barber giving a client a cut inside a modern barbershop" loading="lazy">
-              <div class="s-shade"></div>
-              <div class="s-hero-in">
-                <div class="s-eyebrow">EST. 2015 · NORWALK</div>
-                <h5>Sharp cuts.<br>No waiting.</h5>
-                <span class="s-btn">Book your chair →</span>
-              </div>
-            </div>
-            <div class="s-prices">
-              <div class="s-price"><span>Haircut</span><span class="p">$30</span></div>
-              <div class="s-price"><span>Skin fade</span><span class="p">$35</span></div>
-              <div class="s-price"><span>Beard trim</span><span class="p">$20</span></div>
-              <div class="s-price"><span>Hot towel shave</span><span class="p">$40</span></div>
-            </div>
+        <a class="demo-link" href="demos/salon.html" target="_blank" rel="noopener">
+          <div class="browser">
+            <div class="bbar"><i></i><i></i><i></i><span class="burl">fadeandco.com</span></div>
+            <iframe class="demo-frame" src="demos/salon.html" title="Fade & Co. demo site" loading="lazy" tabindex="-1"></iframe>
           </div>
-        </div>
+        </a>
         <div class="demo-cta"><a class="demo-open" href="demos/salon.html" target="_blank" rel="noopener">Open the full salon demo ↗</a></div>
       </div>
     </div>
