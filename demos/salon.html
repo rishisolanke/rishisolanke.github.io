@@ -19,11 +19,9 @@
   a{color:inherit}
   @keyframes fcmarquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
   a:focus-visible,button:focus-visible{outline:2px solid #B23A2E;outline-offset:3px}
-  .fc-tile{position:relative;aspect-ratio:3/4;overflow:hidden;display:flex;align-items:center;justify-content:center;color:rgba(185,138,62,.4);font-size:34px;transition:transform .5s ease,filter .5s ease}
+  .fc-tile{position:relative;aspect-ratio:3/4;overflow:hidden;display:flex;align-items:center;justify-content:center;transition:transform .5s ease,filter .5s ease}
   .fc-tile:hover{transform:scale(1.012)}
-  .fc-t1{background:radial-gradient(90% 70% at 50% 35%,rgba(178,58,46,.22),transparent 62%),linear-gradient(160deg,#1c1817,#111010)}
-  .fc-t2{background:radial-gradient(90% 70% at 50% 40%,rgba(185,138,62,.18),transparent 62%),linear-gradient(200deg,#191615,#0d0c0c)}
-  .fc-t3{background:linear-gradient(150deg,#211b1a,#121010)}
+  .fc-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .fc-btn{cursor:pointer;transition:.18s}
   .fc-barber.active{background:#B23A2E!important;border-color:#B23A2E!important;color:#ECE6DD!important}
   .fc-slot.active{background:#B98A3E!important;border-color:#B98A3E!important;color:#111010!important}
@@ -58,7 +56,7 @@
   <!-- MARQUEE -->
   <div style="overflow:hidden;border-top:1px solid rgba(185,138,62,.25);border-bottom:1px solid rgba(185,138,62,.25);padding:16px 0;white-space:nowrap">
     <div class="fc-disp" style="display:inline-block;animation:fcmarquee 26s linear infinite;font-size:26px;color:rgba(236,230,221,.6)">
-      Skin Fade&nbsp;&nbsp;✦&nbsp;&nbsp;Line-Up&nbsp;&nbsp;✦&nbsp;&nbsp;Beard Trim&nbsp;&nbsp;✦&nbsp;&nbsp;Hot Towel Shave&nbsp;&nbsp;✦&nbsp;&nbsp;Scissor Cut&nbsp;&nbsp;✦&nbsp;&nbsp;Kids' Cut&nbsp;&nbsp;✦&nbsp;&nbsp;Skin Fade&nbsp;&nbsp;✦&nbsp;&nbsp;Line-Up&nbsp;&nbsp;✦&nbsp;&nbsp;Beard Trim&nbsp;&nbsp;✦&nbsp;&nbsp;Hot Towel Shave&nbsp;&nbsp;✦&nbsp;&nbsp;Scissor Cut&nbsp;&nbsp;✦&nbsp;&nbsp;Kids' Cut&nbsp;&nbsp;✦&nbsp;&nbsp;
+      Skin Fade&nbsp;&nbsp;·&nbsp;&nbsp;Line-Up&nbsp;&nbsp;·&nbsp;&nbsp;Beard Trim&nbsp;&nbsp;·&nbsp;&nbsp;Hot Towel Shave&nbsp;&nbsp;·&nbsp;&nbsp;Scissor Cut&nbsp;&nbsp;·&nbsp;&nbsp;Kids' Cut&nbsp;&nbsp;·&nbsp;&nbsp;Skin Fade&nbsp;&nbsp;·&nbsp;&nbsp;Line-Up&nbsp;&nbsp;·&nbsp;&nbsp;Beard Trim&nbsp;&nbsp;·&nbsp;&nbsp;Hot Towel Shave&nbsp;&nbsp;·&nbsp;&nbsp;Scissor Cut&nbsp;&nbsp;·&nbsp;&nbsp;Kids' Cut&nbsp;&nbsp;·&nbsp;&nbsp;
     </div>
   </div>
 
@@ -69,12 +67,12 @@
       <p class="fc-mono" style="margin:0 0 6px;font-size:12.5px;letter-spacing:.06em;color:rgba(236,230,221,.55);max-width:26ch;text-align:right">Every one done in-chair. Book the look you want.</p>
     </div>
     <div class="fc-gal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
-      <figure style="margin:0"><div class="fc-tile fc-t1">✂<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Mid Skin Fade</figcaption></div></figure>
-      <figure style="margin:0"><div class="fc-tile fc-t2">✂<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Textured Crop</figcaption></div></figure>
-      <figure style="margin:0"><div class="fc-tile fc-t3">✂<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Classic Pomp</figcaption></div></figure>
-      <figure style="margin:0"><div class="fc-tile fc-t2">✂<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Beard Sculpt</figcaption></div></figure>
-      <figure style="margin:0"><div class="fc-tile fc-t3">✂<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Buzz + Line-Up</figcaption></div></figure>
-      <figure style="margin:0"><div class="fc-tile fc-t1">✂<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Scissor Crop</figcaption></div></figure>
+      <figure style="margin:0"><div class="fc-tile"><img src="../images/salon-hero.jpg" alt="Mid skin fade haircut" style="object-position:20% 15%"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Mid Skin Fade</figcaption></div></figure>
+      <figure style="margin:0"><div class="fc-tile"><img src="../images/salon-hero.jpg" alt="Textured crop haircut" style="object-position:60% 25%"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Textured Crop</figcaption></div></figure>
+      <figure style="margin:0"><div class="fc-tile"><img src="../images/salon-hero.jpg" alt="Classic pompadour" style="object-position:80% 10%"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Classic Pomp</figcaption></div></figure>
+      <figure style="margin:0"><div class="fc-tile"><img src="../images/salon-hero.jpg" alt="Beard sculpt" style="object-position:40% 50%"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Beard Sculpt</figcaption></div></figure>
+      <figure style="margin:0"><div class="fc-tile"><img src="../images/salon-hero.jpg" alt="Buzz cut with line-up" style="object-position:30% 70%"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Buzz + Line-Up</figcaption></div></figure>
+      <figure style="margin:0"><div class="fc-tile"><img src="../images/salon-hero.jpg" alt="Scissor crop haircut" style="object-position:50% 35%"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(17,16,16,.85) 100%)"></div><figcaption class="fc-mono" style="position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ECE6DD">Scissor Crop</figcaption></div></figure>
     </div>
   </section>
 
@@ -154,7 +152,7 @@
   var slots = document.querySelectorAll('.fc-slot');
   var cta = document.getElementById('fc-confirm');
   function render(){
-    if (done){ cta.textContent = '✦ Booked with ' + barber + ' at ' + slot + ', see you soon'; cta.style.background='#B98A3E'; cta.style.color='#111010'; return; }
+    if (done){ cta.textContent = '· Booked with ' + barber + ' at ' + slot + ', see you soon'; cta.style.background='#B98A3E'; cta.style.color='#111010'; return; }
     if (slot){ cta.textContent = 'Book ' + barber + ' at ' + slot; cta.style.background='#B23A2E'; cta.style.color='#ECE6DD'; }
     else { cta.textContent = 'Select a time to book'; cta.style.background='rgba(236,230,221,.12)'; cta.style.color='rgba(236,230,221,.5)'; }
   }

@@ -24,7 +24,8 @@
   a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid #C6A24B;outline-offset:3px}
   .tr-reveal{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
   .tr-reveal.on{opacity:1;transform:none}
-  .tr-dish{width:100%;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 80% at 50% 32%,rgba(198,162,75,.16),rgba(14,12,11,0) 62%),linear-gradient(160deg,#1A1512,#0E0C0B);color:rgba(198,162,75,.5);font-size:26px}
+  .tr-dish{width:100%;aspect-ratio:4/5;position:relative;overflow:hidden}
+  .tr-dish img{width:100%;height:100%;object-fit:cover}
   @media (max-width:720px){.tr-resform{grid-template-columns:1fr!important}.tr-reserve-inner{position:static!important;padding:36px 24px!important}.tr-reserve-wrap{height:auto!important}.tr-reserve-img{position:absolute!important}}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.tr-reveal{opacity:1;transform:none}}
 </style>
@@ -69,19 +70,19 @@
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;background:rgba(198,162,75,.18)">
       <figure class="tr-reveal" style="margin:0;background:#0E0C0B;position:relative;overflow:hidden">
-        <div class="tr-dish">✦</div>
+        <div class="tr-dish"><img src="../images/restaurant-hero.jpg" alt="Sound oysters on a plate" style="object-position:20% 60%"></div>
         <figcaption style="padding:22px 22px 26px"><div class="tr-serif" style="font-size:22px;letter-spacing:.01em">Sound Oysters</div><div style="margin-top:8px;font-size:13.5px;line-height:1.55;color:rgba(239,233,220,.62);font-weight:300">Half dozen, mignonette, sea salt</div></figcaption>
       </figure>
       <figure class="tr-reveal" style="margin:0;background:#0E0C0B;position:relative;overflow:hidden">
-        <div class="tr-dish">✦</div>
+        <div class="tr-dish"><img src="../images/restaurant-hero.jpg" alt="Whole branzino charred over embers" style="object-position:50% 30%"></div>
         <figcaption style="padding:22px 22px 26px"><div class="tr-serif" style="font-size:22px;letter-spacing:.01em">Whole Branzino</div><div style="margin-top:8px;font-size:13.5px;line-height:1.55;color:rgba(239,233,220,.62);font-weight:300">Charred over embers, fennel, lemon</div></figcaption>
       </figure>
       <figure class="tr-reveal" style="margin:0;background:#0E0C0B;position:relative;overflow:hidden">
-        <div class="tr-dish">✦</div>
+        <div class="tr-dish"><img src="../images/restaurant-hero.jpg" alt="Seared scallops" style="object-position:80% 45%"></div>
         <figcaption style="padding:22px 22px 26px"><div class="tr-serif" style="font-size:22px;letter-spacing:.01em">Seared Scallops</div><div style="margin-top:8px;font-size:13.5px;line-height:1.55;color:rgba(239,233,220,.62);font-weight:300">Brown butter, corn, sea beans</div></figcaption>
       </figure>
       <figure class="tr-reveal" style="margin:0;background:#0E0C0B;position:relative;overflow:hidden">
-        <div class="tr-dish">✦</div>
+        <div class="tr-dish"><img src="../images/restaurant-hero.jpg" alt="Salted honey tart" style="object-position:35% 75%"></div>
         <figcaption style="padding:22px 22px 26px"><div class="tr-serif" style="font-size:22px;letter-spacing:.01em">Salted Honey Tart</div><div style="margin-top:8px;font-size:13.5px;line-height:1.55;color:rgba(239,233,220,.62);font-weight:300">Local honey, crème fraîche</div></figcaption>
       </figure>
     </div>
@@ -162,7 +163,7 @@
     els.forEach(function(el){ io.observe(el); });
   }
   var btn = document.getElementById('tr-reserve-btn');
-  if (btn) btn.addEventListener('click', function(){ btn.textContent = 'Table held, see you soon ✦'; btn.style.background = '#EFE9DC'; });
+  if (btn) btn.addEventListener('click', function(){ btn.textContent = 'Table held, see you soon ·'; btn.style.background = '#EFE9DC'; });
 })();
 </script>
 </body>
